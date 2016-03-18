@@ -50,7 +50,7 @@ function cps {
 }
 
 function shup {
-  cps && cdgs && push "$1" && cd -
+  cps && pushd ~/GitHub/gentoo-scripts && push "$1" && szsh && popd
 }
 
 #############################################################
