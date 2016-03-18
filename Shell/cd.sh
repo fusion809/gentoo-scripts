@@ -9,3 +9,7 @@ function cdgs {
 function cdsh {
 	cd ~/Shell
 }
+
+function cdst {
+	cd ~/GitHub/sabayon-tools
+}
