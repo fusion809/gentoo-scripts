@@ -4,15 +4,16 @@ mkdir ~/GitHub
 # Clone sabayon-scripts repo
 git clone https://github.com/fusion809/gentoo-scripts ~/GitHub/sabayon-scripts
 
-# Copy across
-cp -a ~/GitHub/gentoo-scripts/{Shell,.bashrc,.zshrc} ~/
-sudo cp -a ~/GitHub/gentoo-scripts/root/{Shell,.bashrc,.zshrc} /root/
 
 # Install Zsh
 sudo emerge zsh
 
-# git clone oh-my-zsh
-git clone https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
+# Install oh-my-zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# Copy across
+cp -a ~/GitHub/gentoo-scripts/{Shell,.bashrc,.zshrc} ~/
+sudo cp -a ~/GitHub/gentoo-scripts/root/{Shell,.bashrc,.zshrc} /root/
 
 # Get my self-made zsh-themes
 git clone https://github.com/fusion809/zsh-theme ~/GitHub/zsh-theme
