@@ -12,7 +12,7 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 
 # Copy across
 cp -a ~/GitHub/gentoo-scripts/{Shell,.bashrc,.zshrc} ~/
-sudo cp -a ~/GitHub/gentoo-scripts/root/{Shell,.bashrc,.zshrc} /root/
+sudo cp -a ~/GitHub/gentoo-scripts/root/{Shell,.bashrc} /root/
 
 # Get my self-made zsh-themes
 git clone https://github.com/fusion809/zsh-theme ~/GitHub/zsh-theme
