@@ -1,9 +1,8 @@
 # Create GitHub directory
 mkdir ~/GitHub
 
-# Clone sabayon-scripts repo
+# Clone gentoo-scripts repo
 git clone https://github.com/fusion809/gentoo-scripts ~/GitHub/gentoo-scripts
-
 
 # Install Zsh
 sudo emerge zsh
