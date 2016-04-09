@@ -2,7 +2,7 @@
 mkdir ~/GitHub
 
 # Clone sabayon-scripts repo
-git clone https://github.com/fusion809/gentoo-scripts ~/GitHub/sabayon-scripts
+git clone https://github.com/fusion809/gentoo-scripts ~/GitHub/gentoo-scripts
 
 
 # Install Zsh
