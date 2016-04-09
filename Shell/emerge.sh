@@ -2,8 +2,10 @@ function syncup {
 	sudo emerge --sync && emup
 }
 
+alias ems=syncup
+
 function emup {
-	sudo emerge -uDU --with-bdeps=y @world
+	sudo emerge --verbose-conflicts -uDU --with-bdeps=y @world
 }
 
 function emin {
@@ -12,4 +14,12 @@ function emin {
 
 function emrm {
 	sudo emerge -Cav $@
+}
+
+function emaw {
+	sudo emerge --autounmask-write $@
+}
+
+function etup {
+	sudo etc-update --automode -5
 }
