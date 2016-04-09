@@ -5,7 +5,9 @@ mkdir ~/GitHub
 git clone https://github.com/fusion809/gentoo-scripts ~/GitHub/gentoo-scripts
 
 # Install Zsh
-sudo emerge zsh
+if ! [[ -f "/bin/zsh" ]]; then
+  sudo emerge app-shells/zsh
+fi
 
 # Install oh-my-zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
