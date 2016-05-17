@@ -5,11 +5,11 @@ fi
 
 # Get openssh, if not pre-installed and Zsh
 if ! `which ssh >/dev/null 2>&1`; then
-  sudo emerge openssh
+  sudo emerge -av openssh
 fi
 
 if ! `which zsh >/dev/null 2>&1`; then
-  sudo emerge app-shells/zsh
+  sudo emerge -av app-shells/zsh
 fi
 
 # Clone gentoo-scripts repo
