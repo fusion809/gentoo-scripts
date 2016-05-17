@@ -8,7 +8,7 @@ if ! `which ssh >/dev/null 2>&1`; then
   sudo emerge -av openssh
 fi
 
-if ! `which zsh >/dev/null 2>&1`; then
+if ! [[ -f /bin/zsh ]]; then
   sudo emerge -av app-shells/zsh
 fi
 
