@@ -1,31 +1,37 @@
 # Create GitHub directory
-if ! [[ -d $HOME/GitHub ]]; then 
+if ! [[ -d $HOME/GitHub ]]; then
   mkdir ~/GitHub
 fi
 
 # Get openssh, if not pre-installed and Zsh
-sudo pacman -S --noconfirm --needed openssh zsh
+if which openssh >/dev/null 2>&1; then
+  sudo emerge openssh
+fi
 
-# Clone arch-scripts repo
-if ! [[ -d $HOME/GitHub/arch-scripts ]] || ! [[ -d $HOME/GitHub/mine/arch-scripts ]]; then
-  git clone https://github.com/fusion809/arch-scripts ~/GitHub/mine/arch-scripts
+if which zsh >/dev/null 2>&1; then
+  sudo emerge app-shells/zsh
+fi
+
+# Clone gentoo-scripts repo
+if ! [[ -d $HOME/GitHub/gentoo-scripts ]] || ! [[ -d $HOME/GitHub/mine/gentoo-scripts ]]; then
+  git clone https://github.com/fusion809/gentoo-scripts ~/GitHub/mine/gentoo-scripts
   # Copy across
-  cp -a $HOME/GitHub/mine/arch-scripts/{Shell,.bashrc,.zshrc} ~/
-  sudo cp -a $HOME/GitHub/mine/arch-scripts/root/{Shell,.bashrc,.zshrc} /root/ 
-elif [[ -d $HOME/GitHub/arch-scripts ]]; then
-  cd $HOME/GitHub/arch-scripts
+  cp -a $HOME/GitHub/mine/gentoo-scripts/{Shell,.bashrc,.zshrc} ~/
+  sudo cp -a $HOME/GitHub/mine/gentoo-scripts/root/{Shell,.bashrc,.zshrc} /root/
+elif [[ -d $HOME/GitHub/gentoo-scripts ]]; then
+  cd $HOME/GitHub/gentoo-scripts
   git pull origin master
   cd -
   # Copy across
-  cp -a $HOME/GitHub/arch-scripts/{Shell,.bashrc,.zshrc} ~/
-  sudo cp -a $HOME/GitHub/arch-scripts/root/{Shell,.bashrc,.zshrc} /root/
-elif [[ -d $HOME/GitHub/mine/arch-scripts ]]; then
-  cd $HOME/GitHub/mine/arch-scripts
+  cp -a $HOME/GitHub/gentoo-scripts/{Shell,.bashrc,.zshrc} ~/
+  sudo cp -a $HOME/GitHub/gentoo-scripts/root/{Shell,.bashrc,.zshrc} /root/
+elif [[ -d $HOME/GitHub/mine/gentoo-scripts ]]; then
+  cd $HOME/GitHub/mine/gentoo-scripts
   git pull origin master
   cd -
   # Copy across
-  cp -a $HOME/GitHub/mine/arch-scripts/{Shell,.bashrc,.zshrc} ~/
-  sudo cp -a $HOME/GitHub/mine/arch-scripts/root/{Shell,.bashrc,.zshrc} /root/
+  cp -a $HOME/GitHub/mine/gentoo-scripts/{Shell,.bashrc,.zshrc} ~/
+  sudo cp -a $HOME/GitHub/mine/gentoo-scripts/root/{Shell,.bashrc,.zshrc} /root/
 fi
 
 if ! [[ -d $HOME/.oh-my-zsh ]]; then
