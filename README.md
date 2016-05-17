@@ -1,4 +1,6 @@
 # gentoo-scripts
-Shell scripts for Gentoo Linux. 
+Shell scripts for Gentoo Linux.
 
-`sh -c "$(wget -cqO- https://git.io/vVymX)"`
+```bash
+/bin/bash -c "$(wget -cqO- https://git.io/vVymX)"
+```
