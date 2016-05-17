@@ -76,7 +76,7 @@ fi
 function start_agent {
     echo "Initializing new SSH agent..."
     # spawn ssh-agent
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    /usr/bin/ssh-agent | /bin/sed 's/^echo/#echo/' > "${SSH_ENV}"
     echo succeeded
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
@@ -85,7 +85,7 @@ function start_agent {
 
 if [[ -f "${SSH_ENV}" ]]; then
      . "${SSH_ENV}" > /dev/null
-     ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+     /bin/ps -ef | /bin/grep ${SSH_AGENT_PID} | /bin/grep ssh-agent > /dev/null || {
       start_agent;
     }
 else
