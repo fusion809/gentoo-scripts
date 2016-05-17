@@ -4,11 +4,11 @@ if ! [[ -d $HOME/GitHub ]]; then
 fi
 
 # Get openssh, if not pre-installed and Zsh
-if which openssh >/dev/null 2>&1; then
+if ! `which ssh >/dev/null 2>&1`; then
   sudo emerge openssh
 fi
 
-if which zsh >/dev/null 2>&1; then
+if ! `which zsh >/dev/null 2>&1`; then
   sudo emerge app-shells/zsh
 fi
 
