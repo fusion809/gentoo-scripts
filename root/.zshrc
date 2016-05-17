@@ -1,4 +1,4 @@
-export TERM="xterm-256color" 
+export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=/home/fusion809/.oh-my-zsh
 
@@ -52,7 +52,7 @@ ZSH_THEME="hcompact"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git safe-paste zsh-completions)
 autoload -U compinit && compinit
-source ~/.oh-my-zsh/plugins/history-substring-search/history-substring-search.zsh
+source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-for i in ~/Shell/*.sh
+for i in $HOME/Shell/*.sh
 do
   . "$i"
 done
