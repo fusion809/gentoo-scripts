@@ -9,7 +9,7 @@ function gitsw {
   git remote rm origin
   git remote rm upstream
 	CWD=${PWD##*/}
-	if [[ "$CWD" =~ ^\. ]]; then
+	if [[ "$CWD" =$HOME ^\. ]]; then
 		GWD="${CWD#.}"
 	  if [[ -n "$1" ]]
 	    then
@@ -36,21 +36,21 @@ alias gitssh=gitsw
 alias gits=gitsw
 
 function cps {
-   cp -a ~/Shell/* ~/GitHub/gentoo-scripts/Shell
-   if [[ -f ~/.zshrc ]]; then
-   	cp -a ~/{.bashrc,.zshrc} ~/GitHub/gentoo-scripts/
+   cp -a $HOME/Shell/* $HOME/GitHub/gentoo-scripts/Shell
+   if [[ -f $HOME/.zshrc ]]; then
+   	cp -a $HOME/{.bashrc,.zshrc} $HOME/GitHub/gentoo-scripts/
    else
-	cp -a ~/.bashrc ~/GitHub/gentoo-scripts/
+	cp -a $HOME/.bashrc $HOME/GitHub/gentoo-scripts/
    fi
    if [[ -f /root/.zshrc ]]; then
-	sudo cp -a /root/{Shell,.bashrc,.zshrc} ~/GitHub/gentoo-scripts/root/
+	sudo cp -a /root/{Shell,.bashrc,.zshrc} $HOME/GitHub/gentoo-scripts/root/
    else
-	sudo cp -a /root/{Shell,.bashrc} ~/GitHub/gentoo-scripts/root/
+	sudo cp -a /root/{Shell,.bashrc} $HOME/GitHub/gentoo-scripts/root/
    fi
 }
 
 function shup {
-  cps && pushd ~/GitHub/gentoo-scripts && push "$1" && szsh && popd
+  cps && pushd $HOME/GitHub/gentoo-scripts && push "$1" && szsh && popd
 }
 
 #############################################################
