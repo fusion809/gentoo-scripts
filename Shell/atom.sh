@@ -17,3 +17,7 @@ function apmr {
 function apmup {
 	apm update --no-confirm
 }
+
+function edst {
+	atom $HOME/GitHub/mine/sabayon-tools
+}
