@@ -1,3 +1,3 @@
-export GHUB=$HOME/GitHub
+export GHUB=$GHUB
 export GHUBM=$GHUB/mine
 export GS=$GHUBM/gentoo-scripts

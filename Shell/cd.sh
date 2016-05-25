@@ -1,13 +1,17 @@
 function cdg {
-	cd $HOME/GitHub
+	cd $GHUB
 }
 
 function cdgs {
-	cd $HOME/GitHub/gentoo-scripts
+	cd $GHUB/gentoo-scripts
+}
+
+function cdga {
+	cd $GHUB/atom*[0-9]
 }
 
 function cdgm {
-	cd $HOME/GitHub/mine
+	cd $GHUBM
 }
 
 function cdp {
@@ -19,7 +23,7 @@ function cdsh {
 }
 
 function cdst {
-	cd $HOME/GitHub/sabayon-tools
+	cd $GHUB/sabayon-tools
 }
 
 function cddo {

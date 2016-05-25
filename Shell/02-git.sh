@@ -37,26 +37,12 @@ alias gits=gitsw
 
 ## Update local arch-scripts repo
 function cps {
-<<<<<<< HEAD
   sudo chmod +x -R {$HOME,/root}/Shell/
   rm -rf $GS/Shell && mkdir $GS/Shell
   sudo rm -rf $GS/root/Shell
   cp -a $HOME/Shell/* $GS/Shell
   cp -a $HOME/{.bashrc,.zshrc} $GS/
   sudo cp -a /root/{Shell,.bashrc,.zshrc} $GS/root/
-=======
-   cp -a $HOME/Shell/* $HOME/GitHub/gentoo-scripts/Shell
-   if [[ -f $HOME/.zshrc ]]; then
-   	cp -a $HOME/{.bashrc,.zshrc} $HOME/GitHub/gentoo-scripts/
-   else
-	cp -a $HOME/.bashrc $HOME/GitHub/gentoo-scripts/
-   fi
-   if [[ -f /root/.zshrc ]]; then
-	sudo cp -a /root/{Shell,.bashrc,.zshrc} $HOME/GitHub/gentoo-scripts/root/
-   else
-	sudo cp -a /root/{Shell,.bashrc} $HOME/GitHub/gentoo-scripts/root/
-   fi
->>>>>>> 49d4273198778fbc0a650ac53a46720146b7a0a0
 }
 
 function cdas {
@@ -65,11 +51,7 @@ function cdas {
 
 ## Update sabayon-scripts GitHub repo
 function shup {
-<<<<<<< HEAD
   cps && cdas && push "$1" && cd - && szsh
-=======
-  cps && pushd $HOME/GitHub/gentoo-scripts && push "$1" && szsh && popd
->>>>>>> 49d4273198778fbc0a650ac53a46720146b7a0a0
 }
 
 #############################################################
