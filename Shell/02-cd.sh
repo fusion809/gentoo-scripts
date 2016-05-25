@@ -27,7 +27,7 @@ function cdsh {
 }
 
 function cdst {
-	cd $GHUB/sabayon-tools
+	cd $GHUB/mine/sabayon-tools
 }
 
 function cddo {
