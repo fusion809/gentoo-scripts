@@ -6,6 +6,10 @@ function cdgs {
 	cd ~/GitHub/gentoo-scripts
 }
 
+function cdgm {
+	cd $HOME/GitHub/mine
+}
+
 function cdp {
 	cd ~/Programs
 }
