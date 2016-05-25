@@ -1,9 +1,9 @@
 function cdg {
-	cd ~/GitHub
+	cd $HOME/GitHub
 }
 
 function cdgs {
-	cd ~/GitHub/gentoo-scripts
+	cd $HOME/GitHub/gentoo-scripts
 }
 
 function cdgm {
@@ -11,29 +11,29 @@ function cdgm {
 }
 
 function cdp {
-	cd ~/Programs
+	cd $HOME/Programs
 }
 
 function cdsh {
-	cd ~/Shell
+	cd $HOME/Shell
 }
 
 function cdst {
-	cd ~/GitHub/sabayon-tools
+	cd $HOME/GitHub/sabayon-tools
 }
 
 function cddo {
-	cd ~/Downloads
+	cd $HOME/Downloads
 }
 
 function cddc {
-	cd ~/Documents
+	cd $HOME/Documents
 }
 
 function cdap {
-	cd ~/.local/share/applications
+	cd $HOME/.local/share/applications
 }
 
 function cddd {
-	cd ~/.local/share/desktop-directories
+	cd $HOME/.local/share/desktop-directories
 }
