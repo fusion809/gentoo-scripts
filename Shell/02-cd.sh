@@ -1,3 +1,7 @@
+function cdat {
+	cd $HOME/.atom
+}
+
 function cdg {
 	cd $GHUB
 }
