@@ -1,6 +1,6 @@
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
-export ZSH=/home/fusion809/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -72,7 +72,7 @@ bindkey '^[[B' history-substring-search-down
 # bindkey -M vicmd 'j' history-substring-search-down
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/bin:/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

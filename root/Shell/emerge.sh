@@ -17,3 +17,7 @@ function emrm {
 function ems {
 	emerge --sync
 }
+
+function emaw {
+	emerge --autounmask-write "$@"
+}
