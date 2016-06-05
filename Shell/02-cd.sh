@@ -7,7 +7,7 @@ function cdg {
 }
 
 function cdgs {
-	cd $GHUB/gentoo-scripts
+	cd $GHUBM/gentoo-scripts
 }
 
 function cdga {
@@ -27,7 +27,7 @@ function cdsh {
 }
 
 function cdst {
-	cd $GHUB/mine/sabayon-tools
+	cd $GHUBM/sabayon-tools
 }
 
 function cddo {
