@@ -50,7 +50,7 @@ ZSH_THEME="hcompact"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git safe-paste zsh-completions)
+plugins=(git safe-paste zsh-completions zsh-syntax-highlighting zsh-navigation-tools github)
 autoload -U compinit && compinit
 source $ZSH/plugins/history-substring-search/history-substring-search.zsh
 # bind UP and DOWN arrow keys
