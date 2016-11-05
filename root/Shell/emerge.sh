@@ -21,3 +21,7 @@ function ems {
 function emaw {
 	emerge --autounmask-write "$@"
 }
+
+function empr {
+	emerge @preserved-rebuild
+}

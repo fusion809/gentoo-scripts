@@ -23,3 +23,7 @@ function emaw {
 function etup {
 	sudo etc-update --automode -5
 }
+
+function empr {
+	sudo emerge @preserved-rebuild
+}
