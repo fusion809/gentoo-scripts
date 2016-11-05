@@ -3,7 +3,7 @@ function gvsh {
 }
 
 function vbash {
-	vim ~/.bashrc
+	vim $HOME/.bashrc
 }
 
 function vsh {
@@ -11,9 +11,9 @@ function vsh {
 }
 
 function vvim {
-	vim ~/.vimrc
+	vim $HOME/.vimrc
 }
 
 function vzsh {
-	vim ~/.zshrc
+	vim $HOME/.zshrc
 }

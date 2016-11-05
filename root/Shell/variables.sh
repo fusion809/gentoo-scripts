@@ -1,2 +1,2 @@
-export CHROOT=/home/fusion809/chroot
+export CHROOT=$HOME/chroot
 source /etc/profile

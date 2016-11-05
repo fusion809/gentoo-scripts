@@ -1,7 +1,7 @@
 function nbash {
-	nano ~/.bashrc
+	nano $HOME/.bashrc
 }
 
 function sbash {
-	source ~/.bashrc
+	source $HOME/.bashrc
 }
