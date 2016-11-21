@@ -8,6 +8,10 @@ function emup {
 	sudo emerge --verbose-conflicts -uDU --with-bdeps=y @world
 }
 
+function emcup {
+	sudo emerge -uDU --with-bdeps=y --binpkg-changed-deps=n @world
+}
+
 function emin {
 	sudo emerge -av $@
 }
