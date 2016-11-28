@@ -51,7 +51,7 @@ ZSH_THEME="hcompact"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting safe-paste zsh-completions)
+plugins=(git zsh-syntax-highlighting safe-paste zsh-completions github)
 autoload -U compinit && compinit
 source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys
@@ -73,7 +73,7 @@ bindkey '^[[B' history-substring-search-down
 # bindkey -M vicmd 'j' history-substring-search-down
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/bin:$HOME/.local/bin:/sbin:/usr/sbin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
