@@ -68,7 +68,7 @@ function gitc {
 }
 
 function gitco {
-        git clone https://github.com/$1/$2 $GHUBO/$2
+  git clone https://github.com/$1/$2 $GHUBO/$2
 }
 
 #############################################################
@@ -92,21 +92,21 @@ fi
 # Remember, for this to work you need your SSH keys setup
 # https://help.github.com/articles/generating-ssh-keys/
 function start_agent {
-    echo "Initializing new SSH agent..."
-    # spawn ssh-agent
-    /usr/bin/ssh-agent | /bin/sed 's/^echo/#echo/' > "${SSH_ENV}"
-    echo succeeded
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add
+  echo "Initializing new SSH agent..."
+  # spawn ssh-agent
+  /usr/bin/ssh-agent | /bin/sed 's/^echo/#echo/' > "${SSH_ENV}"
+  echo succeeded
+  chmod 600 "${SSH_ENV}"
+  . "${SSH_ENV}" > /dev/null
+  /usr/bin/ssh-add
 }
 
 if [[ -f "${SSH_ENV}" ]]; then
-     . "${SSH_ENV}" > /dev/null
-     /bin/ps -ef | /bin/grep ${SSH_AGENT_PID} | /bin/grep ssh-agent > /dev/null || {
-      start_agent;
-    }
-else
+  . "${SSH_ENV}" > /dev/null
+  /bin/ps -ef | /bin/grep ${SSH_AGENT_PID} | /bin/grep ssh-agent > /dev/null || {
     start_agent;
+  }
+else
+  start_agent;
 fi
 #############################################################
