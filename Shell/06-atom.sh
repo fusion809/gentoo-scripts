@@ -1,3 +1,7 @@
+if ! `which atom >/dev/null 2>&1`; then
+	alias atom="$HOME/Programs/AppImages/Atom*AppImage"
+fi
+
 function edga {
 	atom $GHUB/atom*[0-9]
 }
