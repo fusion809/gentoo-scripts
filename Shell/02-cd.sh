@@ -38,6 +38,10 @@ function cdap {
 	cd $HOME/.local/share/applications/$1
 }
 
+function cdi {
+	cd $HOME/.local/share/icons/$1
+}
+
 function cddd {
 	cd $HOME/.local/share/desktop-directories/$1
 }
