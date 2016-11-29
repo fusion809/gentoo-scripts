@@ -1,6 +1,6 @@
 set -u
 
-export ATOM_VERSION=$(wget -q "https://api.github.com/repos/atom/atom/releases/latest"  -O - | grep -E "https.*atom-amd64.tar.gz" | cut -d'"' -f4 | cut -d '/' -f 8 | sed 's/v//g')
+export ATOM_VERSION=$(wget -q "https://api.github.com/repos/atom/atom/releases/latest" -O - | grep -E "https.*atom-amd64.tar.gz" | cut -d '"' -f4 | cut -d '/' -f 8 | sed 's/v//g')
 
 if ! [[ -f $HOME/Programs/AppImages/Atom_${ATOM_VERSION}.glibc2.14-x86_64.AppImage ]]; then
 	printf "Atom-${ATOM_VERSION}.glibc2.14-x86_64.AppImage does not exist locally! Downloading...\n"
