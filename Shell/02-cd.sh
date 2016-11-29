@@ -11,11 +11,15 @@ function cdgm {
 }
 
 function cdgs {
-	cdgm scripts/gentoo-scripts/
+	cd $GHUBM/scripts/gentoo-scripts/
 }
 
 function cdp {
 	cd $HOME/Programs/
+}
+
+function cdpa {
+	cd $HOME/Programs/AppImages
 }
 
 function cdsh {
