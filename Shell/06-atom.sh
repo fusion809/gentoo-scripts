@@ -1,5 +1,3 @@
-set -u
-
 export ATOM_VERSION=$(wget -q "https://api.github.com/repos/atom/atom/releases/latest" -O - | grep -E "https.*atom-amd64.tar.gz" | cut -d '"' -f4 | cut -d '/' -f 8 | sed 's/v//g')
 
 if ! [[ -f $HOME/Programs/AppImages/Atom-${ATOM_VERSION}.glibc2.14-x86_64.AppImage ]]; then
@@ -24,7 +22,7 @@ function edsh {
 	atom $HOME/Shell
 }
 
-if `find /tmp/.mount* -name "atom.png" > /dev/null 2>&1`; then
+if [[ -d /tmp/.mount* ]]; then
 	MOUNT_LOCATION=/tmp/$(find /tmp/.mount* -name "atom.png" | head -n 1 | cut -d '/' -f 3)
 	PATH=$PATH:$MOUNT_LOCATION/usr/bin
 fi

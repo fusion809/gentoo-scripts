@@ -1,47 +1,47 @@
 function cdat {
-	cd $HOME/.atom/$1
+	cd $HOME/.atom/
 }
 
 function cdg {
-	cd $GHUB/$1
+	cd $GHUB/
 }
 
 function cdgm {
-	cd $GHUBM/$1
+	cd $GHUBM/
 }
 
 function cdgs {
-	cdgm scripts/gentoo-scripts/$1
+	cdgm scripts/gentoo-scripts/
 }
 
 function cdp {
-	cd $HOME/Programs/$1
+	cd $HOME/Programs/
 }
 
 function cdsh {
-	cd $HOME/Shell/$1
+	cd $HOME/Shell/
 }
 
 function cdst {
-	cd $GHUBM/packaging/sabayon-tools/$1
+	cd $GHUBM/packaging/sabayon-tools/
 }
 
 function cddo {
-	cd $HOME/Downloads/$1
+	cd $HOME/Downloads/
 }
 
 function cddc {
-	cd $HOME/Documents/$1
+	cd $HOME/Documents/
 }
 
 function cdap {
-	cd $HOME/.local/share/applications/$1
+	cd $HOME/.local/share/applications/
 }
 
 function cdi {
-	cd $HOME/.local/share/icons/$1
+	cd $HOME/.local/share/icons/
 }
 
 function cddd {
-	cd $HOME/.local/share/desktop-directories/$1
+	cd $HOME/.local/share/desktop-directories/
 }
