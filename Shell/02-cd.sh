@@ -1,21 +1,25 @@
 function cdat {
-	cd $HOME/.atom/
+	cd $HOME/.atom/$1
 }
 
 function cdg {
-	cd $GHUB/
+	cd $GHUB/$1
 }
 
 function cdgm {
-	cd $GHUBM/
+	cd $GHUBM/$1
+}
+
+function cdsc {
+	cdgm "scripts/$1"
 }
 
 function cdgs {
-	cd $GHUBM/scripts/gentoo-scripts/
+	cdsc "gentoo-scripts/$1"
 }
 
 function cdp {
-	cd $HOME/Programs/
+	cd $HOME/Programs/$1
 }
 
 function cdpa {
@@ -23,19 +27,19 @@ function cdpa {
 }
 
 function cdsh {
-	cd $HOME/Shell/
+	cd $HOME/Shell/$1
 }
 
 function cdst {
-	cd $GHUBM/packaging/sabayon-tools/
+	cd $GHUBM/packaging/sabayon-tools/$1
 }
 
 function cddo {
-	cd $HOME/Downloads/
+	cd $HOME/Downloads/$1
 }
 
 function cddc {
-	cd $HOME/Documents/
+	cd $HOME/Documents/$1
 }
 
 function cdap {
