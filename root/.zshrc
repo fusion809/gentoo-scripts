@@ -1,9 +1,8 @@
 #!/bin/zsh
-export TERM="xterm-256color"
-# Path to your oh-my-zsh installation.
 export ZSH=/home/fusion809/.oh-my-zsh
 
 source $HOME/Shell/prompt.sh
+
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -44,7 +43,7 @@ source $HOME/Shell/prompt.sh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting safe-paste zsh-completions)
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
 source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
@@ -69,7 +68,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:/bin:/sbin:/usr/sbin:/usr/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
