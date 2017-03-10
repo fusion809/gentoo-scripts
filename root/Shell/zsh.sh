@@ -1,5 +1,6 @@
 function szsh {
 	source $HOME/.zshrc
+	source $HOME/Shell/prompt.sh
 }
 
 function nzsh {
