@@ -38,8 +38,12 @@ function cdsh {
 	cd "$HOME/Shell/$1"
 }
 
+function cdpk {
+	cd "$GHUBM/packaging/$1"
+}
+
 function cdst {
-	cd "$GHUBM/packaging/sabayon-tools/$1"
+	cdpk "sabayon-tools/$1"
 }
 
 function cddo {
