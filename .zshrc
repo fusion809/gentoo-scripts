@@ -1,4 +1,8 @@
 #!/bin/zsh
+if [[ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]]; then
+  export PS1="(chroot) $PS1"
+fi
+
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
