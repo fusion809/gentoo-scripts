@@ -1,6 +1,8 @@
 #!/bin/zsh
 export ZSH=/home/fusion809/.oh-my-zsh
-
+if [[ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]]; then
+  export PS1="(chroot) $PS1"
+fi
 source $HOME/Shell/prompt.sh
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
