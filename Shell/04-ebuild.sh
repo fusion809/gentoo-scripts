@@ -18,4 +18,5 @@ function vimup {
 	lver_gvim=$(ls | grep ebuild | sort -u | tail -n 2 | head -n 1 | cut -d '-' -f 2 | sed 's/\.ebuild//g')
 	mv gvim-$lver_gvim.ebuild gvim-$pkgver.ebuild
 	sudo ebuild gvim-$pkgver.ebuild manifest
+	push "Bumping version to $pkgver"
 	popd
