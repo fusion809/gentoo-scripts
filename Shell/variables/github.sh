@@ -9,5 +9,5 @@ export WEB=$GHUBM/websites
 export FGI=$WEB/fusion809.github.io
 export GS=$SCR/gentoo-scripts
 export ST=$PKG/sabayon-tools
-export VIM=$ED/vim
+export VI=$ED/vim
 export VM=$PKG/vim-overlay
