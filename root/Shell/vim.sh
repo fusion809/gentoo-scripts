@@ -1,5 +1,7 @@
 function gvsh {
-	gvim -c ":call RSH()"
+	pushd $HOME/Shell
+	gvim
+	popd
 }
 
 function vbash {
@@ -7,7 +9,9 @@ function vbash {
 }
 
 function vsh {
-	vim -c ":call RSH()"
+	pushd $HOME/Shell
+	vim
+	popd
 }
 
 function vvim {
