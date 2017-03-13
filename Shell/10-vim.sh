@@ -1,9 +1,25 @@
+function gvd {
+	pushd "$1"
+	gvim
+	popd
+}
+
+function vd {
+	pushd "$1"
+	vim
+	popd
+}
+
 function gvfgi {
-	gvim $FGI
+	gvd $FGI
 }
 
 function gvsh {
-	gvim $HOME/Shell
+	gvd $HOME/Shell
+}
+
+function ved {
+	vim *.ebuild
 }
 
 function vrc {
@@ -11,5 +27,5 @@ function vrc {
 }
 
 function vsh {
-	vim $HOME/Shell
+	vd $HOME/Shell
 }
