@@ -1,3 +1,7 @@
+function gvfgi {
+	gvim $FGI
+}
+
 function gvsh {
 	gvim $HOME/Shell
 }
