@@ -1,13 +1,9 @@
-function gvfgi {
-	gvd $FGI
-}
-
 function gvsh {
 	gvd $HOME/Shell
 }
 
 function vrc {
-	vim $HOME/.zshrc
+	vim $HOME/.vimrc
 }
 
 function vsh {
