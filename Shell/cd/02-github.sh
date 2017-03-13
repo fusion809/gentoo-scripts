@@ -1,0 +1,33 @@
+function cdg {
+	cd "$GHUB/$1"
+}
+
+function cdgm {
+	cd "$GHUBM/$1"
+}
+
+function cded {
+	cdgm "editors/$1"
+}
+
+function cdvm {
+	cded "vim/$1"
+}
+
+alias cdvim=cdvm
+
+function cdpk {
+	cd "$GHUBM/packaging/$1"
+}
+
+function cdst {
+	cdpk "sabayon-tools/$1"
+}
+
+function cdsc {
+	cdgm "scripts/$1"
+}
+
+function cdgs {
+	cdsc "gentoo-scripts/$1"
+}

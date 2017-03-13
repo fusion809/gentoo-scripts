@@ -13,35 +13,3 @@ fi
 if ! `which atom >/dev/null 2>&1`; then
 	alias atom="$HOME/Programs/AppImages/Atom-${ATOM_VERSION}.glibc2.14-x86_64.AppImage"
 fi
-
-function edga {
-	atom $GHUB/atom*[0-9]
-}
-
-function edsh {
-	atom $HOME/Shell
-}
-
-if [[ -d /tmp/.mount* ]]; then
-	MOUNT_LOCATION=/tmp/$(find /tmp/.mount* -name "atom.png" | head -n 1 | cut -d '/' -f 3)
-	PATH=$PATH:$MOUNT_LOCATION/usr/bin
-fi
-
-function apmi {
-	apm install "$@"
-}
-
-function apmr {
-	apm remove "$@"
-}
-
-function apmup {
-	apm update --no-confirm
-}
-
-function edst {
-	if ! [[ -d $HOME/GitHub/mine/packaging/sabayon-tools ]]; then
-		git clone https://github.com/fusion809/sabayon-tools $HOME/GitHub/mine/packaging/sabayon-tools
-	fi
-	atom $HOME/GitHub/mine/packaging/sabayon-tools
-}

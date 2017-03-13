@@ -29,3 +29,7 @@ function vrc {
 function vsh {
 	vd $HOME/Shell
 }
+
+function vzsh {
+	vim $HOME/.zshrc
+}
