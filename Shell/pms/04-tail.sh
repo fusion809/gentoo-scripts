@@ -1,3 +1,3 @@
 function taile {
-	tail -f /var/log/emerge-fetch.log
+	sudo tail -f /var/log/emerge-fetch.log
 }
