@@ -34,6 +34,14 @@ function cdsp {
 	cdcfe "Simple-Pendulum/$1"
 }
 
+function cdobs {
+	cd $HOME/OBS/$1
+}
+
+function cdobsh {
+	cdobs "home:fusion809/$1"
+}
+
 function cdvi {
 	cd $HOME/"VirtualBox VMs"/ISOs/$1
 }
