@@ -31,3 +31,7 @@ function cdsc {
 function cdgs {
 	cdsc "gentoo-scripts/$1"
 }
+
+function cdfgi {
+	cd $FGI/$1
+}
