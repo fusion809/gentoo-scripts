@@ -33,3 +33,11 @@ function cdle {
 function cdsp {
 	cdcfe "Simple-Pendulum/$1"
 }
+
+function cdvi {
+	cd $HOME/"VirtualBox VMs"/ISOs/$1
+}
+
+function cdvs {
+	cd $HOME/Videos/SO/$1
+}
