@@ -1,3 +1,7 @@
+function cda {
+	cd "$HOME/AUR/$1"
+}
+
 function cdp {
 	cd "$HOME/Programs/$1"
 }
