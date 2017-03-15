@@ -2,6 +2,10 @@ function ved {
 	vim *.ebuild
 }
 
+function vls {
+	vim *.sh
+}
+
 function vmk {
 	vim Makefile
 }
