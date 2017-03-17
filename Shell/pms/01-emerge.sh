@@ -3,7 +3,7 @@ function empr {
 }
 
 function emrm {
-	sudo emerge -Cav $@
+	sudo emerge -cav $@
 }
 
 function ems {
