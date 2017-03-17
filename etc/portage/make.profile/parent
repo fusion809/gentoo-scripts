@@ -1,0 +1,6 @@
+gentoo:funtoo/1.0/linux-gnu/arch/x86-64bit
+gentoo:funtoo/1.0/linux-gnu/build/current
+gentoo:funtoo/1.0/linux-gnu/arch/x86-64bit/subarch/generic_64
+gentoo:funtoo/1.0/linux-gnu/flavor/desktop
+gentoo:funtoo/1.0/linux-gnu/mix-ins/kde-plasma-5
+gentoo:funtoo/1.0/linux-gnu/mix-ins/gnome

@@ -1,0 +1,12 @@
+# required by scilab (argument)
+# /var/lib/layman/science/profiles/package.mask:
+# Justin Lecher <jlec@gentoo.org> (24 April 2016)
+# rev dep absent
+=sci-mathematics/scilab-5.5.2-r1
+# required by googleearth (argument)
+# /usr/portage/profiles/package.mask/00-gentoo:
+# Julian Ospald <hasufell@gentoo.org> (21 Jul 2013)
+# Mask all unfetchable versions and those with tons of random
+# bugs and segfaults (all). Don't ask for a version bump unless
+# there is a working release.
+=sci-geosciences/googleearth-7.1.8.3036

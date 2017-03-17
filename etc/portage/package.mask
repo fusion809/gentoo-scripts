@@ -1,0 +1,5 @@
+>=sys-kernel/gentoo-sources-4.10.2
+app-editors/vim::gentoo
+app-editors/vim-core::gentoo
+app-editors/gvim::gentoo
+>media-libs/glew-1.10.0-r2::gentoo

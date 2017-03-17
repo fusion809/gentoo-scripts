@@ -1,0 +1,467 @@
+# required by x11-libs/gtk+-2.24.31::gentoo
+# required by app-crypt/pinentry-1.0.0::gentoo[gtk]
+# required by app-crypt/gnupg-2.1.18::gentoo
+# required by dev-vcs/git-2.11.1::gentoo[gpg]
+# required by @system
+# required by @world (argument)
+>=x11-libs/cairo-1.14.8 X
+# required by x11-libs/gtk+-2.24.31::gentoo
+# required by app-crypt/pinentry-1.0.0::gentoo[gtk]
+# required by app-crypt/gnupg-2.1.18::gentoo
+# required by dev-vcs/git-2.11.1::gentoo[gpg]
+# required by @system
+# required by @world (argument)
+>=x11-libs/gdk-pixbuf-2.36.5 X
+# required by kde-frameworks/kauth-5.31.0::gentoo[policykit]
+# required by kde-frameworks/kcmutils-5.31.0::gentoo
+# required by kde-plasma/kdeplasma-addons-5.9.2::gentoo
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=sys-auth/polkit-qt-0.112.0-r1 qt5
+# required by dev-qt/qtgui-5.7.1::gentoo[xcb]
+# required by kde-frameworks/khtml-5.31.0::gentoo
+# required by kde-apps/khelpcenter-16.12.2::gentoo
+# required by kde-frameworks/kdelibs-4.14.29::gentoo[handbook]
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=x11-libs/libxcb-1.12-r2 xkb
+# required by dev-qt/qtdeclarative-4.8.7::gentoo
+# required by kde-frameworks/kdelibs-4.14.29::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtopengl-4.8.7:4 qt3support
+# required by kde-frameworks/networkmanager-qt-5.31.0::gentoo
+# required by kde-plasma/powerdevil-5.9.2::gentoo[wireless]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=net-misc/networkmanager-1.4.4-r1 consolekit
+# required by kde-frameworks/kdelibs-4.14.29::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtdeclarative-4.8.7:4 qt3support
+# required by sys-auth/consolekit-1.0.1::gentoo
+# required by net-misc/networkmanager-1.4.4-r1::gentoo[consolekit]
+# required by kde-frameworks/networkmanager-qt-5.31.0::gentoo
+# required by kde-plasma/powerdevil-5.9.2::gentoo[wireless]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-libs/glib-2.48.2 dbus
+# required by kde-plasma/kwin-5.9.2::gentoo
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=media-libs/mesa-17.0.0 wayland
+# required by dev-qt/qtcore-5.7.1-r1::gentoo
+# required by kde-frameworks/khtml-5.31.0::gentoo
+# required by kde-apps/khelpcenter-16.12.2::gentoo
+# required by kde-frameworks/kdelibs-4.14.29::gentoo[handbook]
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-libs/libpcre-8.40 pcre16
+# required by kde-frameworks/kwayland-5.31.0::gentoo
+# required by kde-plasma/powerdevil-5.9.2::gentoo
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtwayland-5.7.1 egl
+# required by dev-qt/qtdeclarative-4.8.7::gentoo
+# required by kde-frameworks/kdelibs-4.14.29::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtsql-4.8.7-r1:4 qt3support
+# required by media-libs/phonon-vlc-0.9.1::gentoo
+>=media-libs/phonon-4.9.1 qt5
+# required by dev-qt/qtgui-4.8.7::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtcore-4.8.7-r2:4 qt3support
+# required by dev-qt/qtdeclarative-4.8.7::gentoo
+# required by kde-frameworks/kdelibs-4.14.29::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtgui-4.8.7:4 qt3support
+# required by dev-qt/qtwayland-5.7.1::gentoo
+# required by kde-frameworks/kwayland-5.31.0::gentoo
+# required by kde-plasma/powerdevil-5.9.2::gentoo
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-qt/qtgui-5.7.1 dbus jpeg egl
+# required by media-libs/mesa-17.0.0::gentoo[wayland]
+# required by dev-qt/qtwayland-5.7.1::gentoo
+# required by kde-frameworks/kwayland-5.31.0::gentoo
+# required by kde-plasma/powerdevil-5.9.2::gentoo
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=dev-libs/wayland-1.12.0 abi_x86_32
+# required by media-libs/phonon-4.9.1::gentoo[vlc]
+# required by kde-frameworks/kdelibs-4.14.29::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=media-libs/phonon-vlc-0.9.1 qt5
+# required by media-libs/phonon-vlc-0.9.1::gentoo
+# required by media-libs/phonon-4.9.1::gentoo[vlc]
+# required by kde-frameworks/kdelibs-4.14.29::gentoo
+# required by kde-plasma/qguiplatformplugin_kde-4.11.22::gentoo
+# required by kde-plasma/plasma-desktop-5.9.2::gentoo[qt4]
+# required by kde-plasma/plasma-meta-5.9.2::gentoo
+# required by kde-plasma/plasma-meta (argument)
+>=media-video/vlc-2.2.4-r1 dbus ogg vorbis
+app-editors/gvim lua netbeans perl ruby -gtk3
+# required by x11-misc/primus-0.2::gentoo
+# required by x11-misc/bumblebee-3.2.1_p20170123::gentoo
+# required by x11-misc/bumblebee (argument)
+>=x11-drivers/nvidia-drivers-378.13-r1 compat
+net-libs/libsignon-glib introspection
+net-libs/telepathy-glib introspection
+# required by dev-qt/qtwebengine-5.7.1-r1::gentoo
+# required by kde-apps/akonadi-contacts-16.12.2::gentoo
+# required by kde-apps/kgpg-16.12.2::gentoo
+# required by kde-apps/kdeutils-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=media-libs/libvpx-1.6.1 svc
+# required by kde-apps/kdenlive-16.12.2::gentoo
+# required by kde-apps/kdemultimedia-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=virtual/ffmpeg-9-r1 sdl
+# required by app-admin/system-config-printer-1.4.8::gentoo
+# required by kde-apps/print-manager-16.12.2::gentoo[gtk]
+# required by kde-apps/kdeutils-meta-16.12.2::gentoo[cups]
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=x11-libs/gtk+-3.20.9 introspection
+# required by kde-apps/kdenlive-16.12.2::gentoo
+# required by kde-apps/kdemultimedia-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=media-libs/mlt-6.4.1-r1 sdl
+# required by x11-libs/gtk+-3.20.9::gentoo
+# required by app-admin/system-config-printer-1.4.8::gentoo
+# required by kde-apps/print-manager-16.12.2::gentoo[gtk]
+# required by kde-apps/kdeutils-meta-16.12.2::gentoo[cups]
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=dev-libs/atk-2.20.0 introspection
+# required by virtual/ffmpeg-9-r1::gentoo
+# required by kde-apps/kdenlive-16.12.2::gentoo
+# required by kde-apps/kdemultimedia-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=media-video/ffmpeg-3.2.4 sdl
+# required by net-libs/gupnp-0.20.18::gentoo
+# required by net-libs/gupnp-igd-0.2.4::gentoo
+# required by net-libs/libnice-0.1.13::gentoo[upnp]
+# required by net-voip/telepathy-gabble-0.18.3::gentoo[jingle]
+# required by net-im/telepathy-connection-managers-2-r2::gentoo[-msn,xmpp]
+# required by kde-apps/ktp-accounts-kcm-16.12.2::gentoo
+# required by kde-apps/plasma-telepathy-meta-16.12.2::gentoo
+# required by kde-apps/kdenetwork-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=net-libs/libsoup-2.54.1-r1 introspection
+# required by x11-libs/gtk+-3.20.9::gentoo
+# required by app-admin/system-config-printer-1.4.8::gentoo
+# required by kde-apps/print-manager-16.12.2::gentoo[gtk]
+# required by kde-apps/kdeutils-meta-16.12.2::gentoo[cups]
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=x11-libs/pango-1.40.3 introspection
+# required by app-admin/system-config-printer-1.4.8::gentoo
+# required by kde-apps/print-manager-16.12.2::gentoo[gtk]
+# required by kde-apps/kdeutils-meta-16.12.2::gentoo[cups]
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=x11-libs/libnotify-0.7.6-r3 introspection
+# required by net-libs/gupnp-0.20.18::gentoo
+# required by net-libs/gupnp-igd-0.2.4::gentoo
+# required by net-libs/libnice-0.1.13::gentoo[upnp]
+# required by net-voip/telepathy-gabble-0.18.3::gentoo[jingle]
+# required by net-im/telepathy-connection-managers-2-r2::gentoo[-msn,xmpp]
+# required by kde-apps/ktp-accounts-kcm-16.12.2::gentoo
+# required by kde-apps/plasma-telepathy-meta-16.12.2::gentoo
+# required by kde-apps/kdenetwork-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=net-libs/gssdp-0.14.16 introspection
+# required by x11-libs/gtk+-3.20.9::gentoo
+# required by app-admin/system-config-printer-1.4.8::gentoo
+# required by kde-apps/print-manager-16.12.2::gentoo[gtk]
+# required by kde-apps/kdeutils-meta-16.12.2::gentoo[cups]
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by kde-apps-meta (argument)
+>=x11-libs/gdk-pixbuf-2.36.5 introspection
+# required by dev-python/gst-python-1.10.3::gentoo
+# required by media-sound/blockify-3.6.3::sabayon-tools
+# required by blockify (argument)
+>=media-libs/gst-plugins-base-1.10.4 introspection
+# required by media-sound/pulseaudio-10.0::gentoo[alsa-plugin,alsa]
+# required by media-sound/blockify-3.6.3::sabayon-tools
+# required by blockify (argument)
+>=media-plugins/alsa-plugins-1.1.1 pulseaudio
+# required by dev-python/gst-python-1.10.3::gentoo
+# required by media-sound/blockify-3.6.3::sabayon-tools
+# required by blockify (argument)
+>=media-libs/gstreamer-1.10.4 introspection
+sci-mathematics/octave gui
+# required by sys-devel/clang-3.9.1-r100::gentoo
+# required by dev-util/kdevelop-5.0.4::gentoo[cxx]
+# required by kdevelop (argument)
+>=sys-devel/llvm-3.9.1-r1:0 clang
+# required by app-emulation/docker-17.03.0::gentoo[container-init]
+# required by app-emulation/docker (argument)
+>=sys-process/tini-0.13.2 static
+# required by gnome-base/gnome-keyring-3.20.0::gentoo
+# required by gnome-base/libgnome-keyring-3.12.0::gentoo
+# required by app-editors/atom-bin-1.15.0::jorgicio
+# required by atom-bin (argument)
+>=app-crypt/pinentry-1.0.0 gnome-keyring
+# required by dev-java/netbeans-platform-8.2::gentoo
+# required by dev-java/netbeans-java-8.2::gentoo
+# required by dev-java/netbeans-profiler-8.2::gentoo
+# required by dev-util/netbeans-8.2::gentoo[netbeans_modules_profiler]
+# required by =dev-util/netbeans-8.2 (argument)
+>=dev-java/swing-layout-1.0.4-r1 source
+# required by dev-java/netbeans-platform-8.2::gentoo
+# required by dev-java/netbeans-java-8.2::gentoo
+# required by dev-java/netbeans-profiler-8.2::gentoo
+# required by dev-util/netbeans-8.2::gentoo[netbeans_modules_profiler]
+# required by =dev-util/netbeans-8.2 (argument)
+>=dev-java/junit-4.12-r1 source
+# required by dev-util/eric-17.03::gentoo
+# required by =dev-util/eric-17.03 (argument)
+>=dev-python/PyQt5-5.7.1 network gui sql webkit printsupport help
+# required by dev-java/netbeans-platform-8.2::gentoo
+# required by dev-java/netbeans-java-8.2::gentoo
+# required by dev-java/netbeans-profiler-8.2::gentoo
+# required by dev-util/netbeans-8.2::gentoo[netbeans_modules_profiler]
+# required by =dev-util/netbeans-8.2 (argument)
+>=dev-java/oracle-jdk-bin-1.8.0.121 javafx
+# required by dev-python/PyQt5-5.7.1::gentoo[webkit]
+# required by dev-python/qscintilla-python-2.9.4-r1::gentoo[qt5]
+# required by dev-util/eric-17.03::gentoo
+# required by =dev-util/eric-17.03 (argument)
+>=dev-qt/qtwebkit-5.7.1 printsupport
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=app-text/evince-3.20.1 introspection
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=gnome-base/gvfs-1.28.3-r1 udisks
+net-libs/webkit-gtk introspection
+# required by app-text/evince-3.20.1::gentoo
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=app-text/poppler-0.51.0 cairo
+# required by media-sound/gnome-music-3.20.2-r1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/grilo-0.3.2 introspection
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/clutter-gtk-1.8.0 introspection
+# required by media-libs/clutter-1.26.0::gentoo
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/cogl-1.22.2 introspection
+# required by net-misc/gnome-online-miners-3.20.1::gentoo
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=dev-libs/libgdata-0.17.5 introspection gnome-online-accounts
+# required by media-libs/clutter-1.26.0::gentoo
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=dev-libs/json-glib-1.2.2 introspection
+# required by media-libs/clutter-gtk-1.8.0::gentoo
+# required by gnome-extra/gnome-documents-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/clutter-1.26.0 introspection
+# required by gnome-extra/gnome-user-share-3.18.2::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[share]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=www-servers/apache-2.4.25 apache2_modules_auth_digest
+media-libs/libmediaart -qt5
+# required by media-plugins/grilo-plugins-0.3.3::gentoo
+# required by media-sound/gnome-music-3.20.2-r1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/grilo-0.3.2 playlist
+# required by media-sound/gnome-music-3.20.2-r1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-plugins/grilo-plugins-0.3.3 tracker
+dev-libs/gom introspection
+# required by gnome-extra/sushi-3.20.0::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=x11-libs/gtksourceview-3.20.4 introspection
+# required by gnome-extra/sushi-3.20.0::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/clutter-gst-3.0.20 introspection
+media-libs/gexiv2 introspection
+# required by media-plugins/grilo-plugins-0.2.17::gentoo
+# required by media-gfx/gnome-photos-3.20.3::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/grilo-0.2.15:0.2 playlist
+# required by media-gfx/gnome-photos-3.20.3::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-plugins/grilo-plugins-0.2.17:0.2 upnp-av
+# required by games-puzzle/gnome-sudoku-3.20.5::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[games]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=dev-libs/libgee-0.18.0 introspection
+# required by media-gfx/gnome-photos-3.20.3::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[tracker]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=media-libs/gegl-0.3.12 cairo raw
+sys-libs/libosinfo introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo[bluetooth]
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=net-wireless/gnome-bluetooth-3.20.0 introspection
+# required by gnome-extra/gnome-shell-extensions-3.20.1-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo[classic]
+# required by gnome-base/gnome (argument)
+>=gnome-base/gnome-menus-3.13.3-r1 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=gnome-base/gdm-3.20.1 introspection
+# required by gnome-extra/gnome-shell-extensions-3.20.1-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo[classic]
+# required by gnome-base/gnome (argument)
+>=gnome-base/libgtop-2.34.1 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=app-crypt/gcr-3.20.0 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo[networkmanager]
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=net-misc/networkmanager-1.4.4-r1 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=gnome-base/gnome-control-center-3.20.2 networkmanager
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=net-im/telepathy-logger-0.8.2 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=sys-apps/accountsservice-0.6.43 introspection
+# required by gnome-extra/gnome-tweak-tool-3.20.1::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=gnome-base/gnome-desktop-3.20.2 introspection
+# required by gnome-base/gnome-control-center-3.20.2::gentoo[cups]
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=net-fs/samba-4.5.6 client
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=x11-wm/mutter-3.20.3 introspection deprecated-background
+# required by dev-python/pyatspi-2.20.2::gentoo
+# required by app-accessibility/caribou-0.4.21::gentoo
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=app-accessibility/at-spi2-core-2.20.2 introspection
+# required by x11-wm/mutter-3.20.3::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=gnome-base/gsettings-desktop-schemas-3.20.0 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo[nls]
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=app-i18n/ibus-1.5.15 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=sys-power/upower-0.99.3-r1 introspection
+app-editors/gedit introspection
+media-video/totem introspection -python_single_target_python3_4
+# required by media-video/totem-3.20.1::gentoo
+# required by gnome-base/gnome-core-apps-3.20.0::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-libs/totem-pl-parser-3.10.6 introspection
+gnome-extra/evolution-data-server introspection vala
+# required by virtual/libgudev-230::gentoo
+# required by media-gfx/shotwell-0.23.7::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[shotwell]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=dev-libs/libgudev-231 introspection
+# required by gnome-extra/gnome-contacts-3.20.0::gentoo
+# required by gnome-base/gnome-core-apps-3.20.0::gentoo
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=dev-libs/folks-0.11.2 eds
+# required by media-gfx/shotwell-0.23.7::gentoo
+# required by gnome-base/gnome-extra-apps-3.20.0::gentoo[shotwell]
+# required by gnome-base/gnome-3.20::gentoo[extras]
+# required by gnome-base/gnome (argument)
+>=virtual/libgudev-230 introspection
+# required by gnome-base/gnome-shell-3.20.4-r2::gentoo[nls]
+# required by gnome-base/gnome-3.20::gentoo
+# required by gnome-base/gnome (argument)
+>=app-i18n/ibus-1.5.14 introspection
+app-editors/emacs -gtk3
+# required by media-gfx/gimp-2.9.4-r2::gentoo
+# required by gimp (argument)
+>=media-libs/libmypaint-1.3.0 gegl
+kde-plasma/plasma-desktop legacy-systray
+# required by kde-apps/ktp-call-ui-16.12.2::gentoo
+# required by kde-apps/plasma-telepathy-meta-16.12.2::gentoo[gstreamer]
+# required by kde-apps/kdenetwork-meta-16.12.2::gentoo
+# required by kde-apps/kde-apps-meta-16.12.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/telepathy-qt-0.9.7 farstream
+<=dev-qt/qtwebkit-4.10.4 -gstreamer
