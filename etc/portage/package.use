@@ -464,4 +464,9 @@ kde-plasma/plasma-desktop legacy-systray
 # required by @selected
 # required by @world (argument)
 >=net-libs/telepathy-qt-0.9.7 farstream
+# Required to fix conflict with qtgstreamer
 <=dev-qt/qtwebkit-4.10.4 -gstreamer
+app-arch/p7zip kde wxwidgets
+# required by sci-mathematics/wxmaxima-16.12.2::gentoo
+# required by wxmaxima (argument)
+>=sci-visualization/gnuplot-5.0.5 wxwidgets
