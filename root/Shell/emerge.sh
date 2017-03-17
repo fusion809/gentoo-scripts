@@ -1,5 +1,13 @@
+function ems {
+	emerge --sync
+}
+
+function sync {
+	emerge --sync && layman -S
+}
+
 function syncup {
-	emerge --sync && emerge -uDU --with-bdeps=y @world
+	sync && emerge -uDU --with-bdeps=y @world
 }
 
 function emup {
@@ -11,11 +19,7 @@ function emin {
 }
 
 function emrm {
-	emerge -Cav $@
-}
-
-function ems {
-	emerge --sync
+	emerge -cav $@
 }
 
 function emaw {
