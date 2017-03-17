@@ -11,7 +11,8 @@ function emaup {
 }
 
 function sync {
-	sudo emerge --sync
+  sudo emerge --sync
+
   if [[ -f /usr/bin/layman ]]; then
     sudo layman -S
   fi
@@ -20,3 +21,5 @@ function sync {
 function syncup {
 	sync && emup
 }
+
+alias update=syncup
