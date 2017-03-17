@@ -1,5 +1,8 @@
+# Required until NVIDIA supports the 4.10 kernel
 >=sys-kernel/gentoo-sources-4.10
+# Required as otherwise, when run as root, Vim will be downgraded
 app-editors/vim::gentoo
 app-editors/vim-core::gentoo
 app-editors/gvim::gentoo
+# Required as otherwise glew will be upgraded and runescape-launcher won't work
 >media-libs/glew-1.10.0-r2::gentoo
