@@ -1,4 +1,4 @@
->=sys-kernel/gentoo-sources-4.10.2
+>=sys-kernel/gentoo-sources-4.10
 app-editors/vim::gentoo
 app-editors/vim-core::gentoo
 app-editors/gvim::gentoo
