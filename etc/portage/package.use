@@ -470,3 +470,4 @@ app-arch/p7zip kde wxwidgets
 # required by sci-mathematics/wxmaxima-16.12.2::gentoo
 # required by wxmaxima (argument)
 >=sci-visualization/gnuplot-5.0.5 wxwidgets
+sys-apps/pacman curl
