@@ -1,11 +1,3 @@
-function empr {
-	sudo emerge @preserved-rebuild
-}
-
-function emrm {
-	sudo emerge -cav $@
-}
-
 function ems {
 	emerge -s "$@"
 }

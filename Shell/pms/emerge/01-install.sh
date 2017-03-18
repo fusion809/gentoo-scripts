@@ -5,3 +5,7 @@ function emaw {
 function emin {
 	sudo emerge -av $@
 }
+
+function empr {
+	sudo emerge @preserved-rebuild
+}

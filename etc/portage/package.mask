@@ -1,5 +1,6 @@
 # Required until NVIDIA supports the 4.10 kernel
 >=sys-kernel/gentoo-sources-4.10
+>=sys-kernel/ck-sources-4.10
 # Required as otherwise, when run as root, Vim will be downgraded
 app-editors/vim::gentoo
 app-editors/vim-core::gentoo
