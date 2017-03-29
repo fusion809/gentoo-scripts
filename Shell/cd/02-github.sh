@@ -24,6 +24,10 @@ function cdpk {
 	cd "$GHUBM/packaging/$1"
 }
 
+function cdfo {
+	cdpk fusion809-overlay/$1
+}
+
 function cdst {
 	cdpk "sabayon-tools/$1"
 }
@@ -34,6 +38,10 @@ function cdsc {
 
 function cdgs {
 	cdsc "gentoo-scripts/$1"
+}
+
+function cdweb {
+	cd $WEB/$1
 }
 
 function cdfgi {
