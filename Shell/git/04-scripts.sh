@@ -2,33 +2,33 @@
 function cps {
     # scripts
     sudo chmod +x -R {$HOME,/root}/Shell/
-    sudo rm -rf $FS/Shell && mkdir $FS/Shell
-    sudo rm -rf $FS/root/Shell
-    cp -a $HOME/Shell/* $FS/Shell
-    cp -a $HOME/{.bashrc,.zshrc} $FS/
-    sudo mkdir -p $FS/root
-    sudo cp -a /root/{Shell,.bashrc,.zshrc} $FS/root
+    sudo rm -rf $GS/Shell && mkdir $GS/Shell
+    sudo rm -rf $GS/root/Shell
+    cp -a $HOME/Shell/* $GS/Shell
+    cp -a $HOME/{.bashrc,.zshrc} $GS/
+    sudo mkdir -p $GS/root
+    sudo cp -a /root/{Shell,.bashrc,.zshrc} $GS/root
 
     # config
-    if ! [[ -d $FC/etc/portage ]]; then
-        mkdir -p $FC/etc/portage
+    if ! [[ -d $GC/etc/portage ]]; then
+        mkdir -p $GC/etc/portage
     fi
-    sudo cp -a /etc/portage/* $FC/etc/portage
-    if ! [[ -d $FC/etc/kernels ]]; then
-        mkdir -p $FC/etc/kernels
+    sudo cp -a /etc/portage/* $GC/etc/portage
+    if ! [[ -d $GC/etc/kernels ]]; then
+        mkdir -p $GC/etc/kernels
     fi
-    sudo cp -a /etc/kernels/* $FC/etc/kernels
+    sudo cp -a /etc/kernels/* $GC/etc/kernels
 }
 
-function cdfc {
-    cd $FC
+function cdgc {
+    cd $GC
 }
 
-function cdfs {
-    cd $FS
+function cdgs {
+    cd $GS
 }
 
 ## Update gentoo-scripts GitHub repo
 function shup {
-  cps && cdfs && push "$1" && cd - && szsh && cdfc && pusha && cd -
+  cps && cdgs && push "$1" && cd - && szsh && cdgc && pusha && cd -
 }
