@@ -1,9 +1,9 @@
 function ems {
-        emerge --sync
+        emerge -s "$@"
 }
 
 function sync {
-        ems && layman -S
+        emerge --sync && layman -S
 }
 
 function syncup {
