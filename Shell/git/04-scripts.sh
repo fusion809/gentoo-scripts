@@ -8,7 +8,9 @@ function cps {
     cp -a $HOME/{.bashrc,.zshrc} $GS/
     sudo mkdir -p $GS/root
     sudo cp -a /root/{Shell,.bashrc,.zshrc} $GS/root
+}
 
+function cpc {
     # config
     if ! [[ -d $GC/etc/portage ]]; then
         mkdir -p $GC/etc/portage
@@ -30,5 +32,9 @@ function cdgs {
 
 ## Update gentoo-scripts GitHub repo
 function shup {
-  cps && cdgs && push "$1" && cd - && szsh && cdgc && pusha && cd -
+    cps && cdgs && push "$1" && cd - && szsh
+}
+
+function cup {
+    cpc && cdgc && push "$1" && cd -
 }
