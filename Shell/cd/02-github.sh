@@ -33,7 +33,7 @@ function cdpk {
 }
 
 function cdfo {
-	cdpk fusion809-overlay/$1
+	cd "$HOME/fusion809-overlay/$1"
 }
 
 function cdst {
