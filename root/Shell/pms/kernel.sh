@@ -18,15 +18,6 @@ function kern-build {
 
     printf "Building initramfs by using dracut; using better-initramfs creates an initramfs that causes the root disk to have trouble being mounted.\n"
     dracut -f --fstab --xz /boot/initramfs-$KERN.img $KERN
-
-    if ! `grep -qs "/boot/efi" /proc/mounts`; then
-
-        printf "Mounting /dev/sda1 on /boot/efi.\n"
-        mount /dev/sda1 /boot/efi
-
-    fi
-
-    printf "Copying across vmlinuz and initramfs for $KERN to /boot/efi.\n"
-    cp /boot/*$KERN* /boot/efi
-
 }
+
+alias kernel-build=kern-build
