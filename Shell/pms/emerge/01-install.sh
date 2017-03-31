@@ -1,9 +1,13 @@
 function emaw {
-    sudo emerge --autounmask-write $@
+    sudo emerge --autounmask-write "$@"
 }
 
 function emin {
-    sudo emerge -av $@
+    sudo emerge -av "$@"
+}
+
+function eminna {
+    sudo emerge "$@"
 }
 
 function empr {
