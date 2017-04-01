@@ -11,11 +11,19 @@ function emaup {
 }
 
 function sync {
-    sudo emerge --sync
+    sudo emerge --sync && sudo layman -S
 
     if [[ -f /usr/bin/layman ]]; then
          sudo layman -S
     fi
+}
+
+function laysyn {
+	sudo layman -S
+}
+
+function laysynup {
+	laysyn && emup && empr
 }
 
 function syncup {
