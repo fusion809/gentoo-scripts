@@ -10,22 +10,6 @@ function cps {
     sudo cp -a /root/{Shell,.bashrc,.zshrc} $GS/root
 }
 
-function cpc {
-    # config
-    if ! [[ -d $GC/etc/portage ]]; then
-        mkdir -p $GC/etc/portage
-    fi
-    sudo cp -a /etc/portage/* $GC/etc/portage
-    if ! [[ -d $GC/etc/kernels ]]; then
-        mkdir -p $GC/etc/kernels
-    fi
-    sudo cp -a /etc/kernels/* $GC/etc/kernels
-}
-
-function cdgc {
-    cd $GC
-}
-
 function cdgs {
     cd $GS
 }
@@ -33,8 +17,4 @@ function cdgs {
 ## Update gentoo-scripts GitHub repo
 function shup {
     cps && cdgs && push "$1" && cd - && szsh
-}
-
-function cup {
-    cpc && cdgc && push "$1" && cd -
 }
