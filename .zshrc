@@ -57,6 +57,7 @@ HIST_STAMPS="mm/dd/yyyy"
 plugins=(git zsh-syntax-highlighting safe-paste zsh-completions github)
 autoload -U compinit && compinit
 source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
