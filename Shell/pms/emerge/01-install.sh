@@ -6,6 +6,8 @@ function emin {
     sudo emerge -av "$@"
 }
 
+alias emi=emin
+
 function eminna {
     sudo emerge "$@"
 }
