@@ -46,6 +46,10 @@ function cdobsh {
     cdobs "home:fusion809/$1"
 }
 
+function cdtx {
+    cd "$HOME/Textbooks/$1"
+}
+
 function cdvi {
     cd $HOME/"VirtualBox VMs"/ISOs/$1
 }
