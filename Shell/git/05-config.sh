@@ -15,6 +15,7 @@ function cpc {
     fi
 
     sudo cp /etc/env.d/99editor $GC/etc/env.d
+    sudo cp /etc/sddm.conf $GC/etc
 }
 
 function cdgc {

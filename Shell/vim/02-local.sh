@@ -1,17 +1,20 @@
+function vcpp {
+    vim *.cpp
+}
 function ved {
-	vim *.ebuild
+    vim *.ebuild
 }
 
 function vls {
-	vim *.sh
+    vim *.sh
 }
 
 function vmk {
-	vim Makefile
+    vim Makefile
 }
 
 function vpk {
-	vim PKGBUILD
+    vim PKGBUILD
 }
 
 function vrm {
@@ -23,5 +26,5 @@ function vrm {
 }
 
 function vsp {
-	vim *.spec
+    vim *.spec
 }
