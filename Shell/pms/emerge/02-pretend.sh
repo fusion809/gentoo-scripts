@@ -9,3 +9,7 @@ function empqv {
 function empv {
     sudo emerge -pv "$@"
 }
+
+function emupv {
+	sudo emerge --verbose-conflicts -pvuDU --with-bdeps=y @world
+}
