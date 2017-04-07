@@ -1,15 +1,19 @@
 function cdat {
-	cd "$HOME/.atom/$1"
+    cd "$HOME/.atom/$1"
+}
+
+function cdls {
+    cd "$HOME/.local/share/$1"
 }
 
 function cdap {
-	cd "$HOME/.local/share/applications/"
+    cdls "applications/$1"
 }
 
 function cdi {
-	cd "$HOME/.local/share/icons/"
+    cdls "icons/$1"
 }
 
 function cddd {
-	cd "$HOME/.local/share/desktop-directories/"
+    cdls "desktop-directories/$1"
 }
