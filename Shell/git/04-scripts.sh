@@ -8,6 +8,8 @@ function cps {
     cp -a $HOME/{.bashrc,.zshrc} $GS/
     sudo mkdir -p $GS/root
     sudo cp -a /root/{Shell,.bashrc,.zshrc} $GS/root
+    sudo mkdir -p $GS/usr/local/bin
+    sudo cp -a /usr/local/bin/* $GS/usr/local/bin
 }
 
 function cdgs {
