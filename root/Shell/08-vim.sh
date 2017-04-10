@@ -12,6 +12,8 @@ function vmc {
 	vim /etc/portage/make.conf
 }
 
+alias vpmc=vmc
+
 function vpm {
 	vim /etc/portage/package.mask
 }

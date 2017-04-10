@@ -18,6 +18,9 @@ function kern-build {
 
     printf "Building initramfs by using dracut; using better-initramfs creates an initramfs that causes the root disk to have trouble being mounted.\n"
     dracut -f --fstab --xz /boot/initramfs-$KERN.img $KERN
+
+    printf "Updating GRUB configuration file.\n"
+    grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 alias kernel-build=kern-build
