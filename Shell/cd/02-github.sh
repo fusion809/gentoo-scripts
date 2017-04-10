@@ -1,61 +1,61 @@
 function cdg {
-	cd "$GHUB/$1"
+    cd "$GHUB/$1"
 }
 
 function cdgo {
-	cdg "others/$1"
+    cdg "others/$1"
 }
 
 function cdgm {
-	cd "$GHUBM/$1"
+    cd "$GHUBM/$1"
 }
 
 function cdc {
-	cdgm "config/$1"
+    cdgm "config/$@"
 }
 
 function cdgc {
-	cdc "gentoo-config/$1"
+    cdc "gentoo-config/$@"
 }
 
 function cded {
-	cdgm "editors/$1"
+    cdgm "editors/$1"
 }
 
 function cdvm {
-	cded "vim/$1"
+    cded "vim/$1"
 }
 
 alias cdvim=cdvm
 
 function cdpk {
-	cd "$GHUBM/packaging/$1"
+    cd "$GHUBM/packaging/$1"
 }
 
 function cdfo {
-	cd "$HOME/fusion809-overlay/$1"
+    cd "$HOME/fusion809-overlay/$1"
 }
 
 function cdst {
-	cdpk "sabayon-tools/$1"
+    cdpk "sabayon-tools/$1"
 }
 
 function cdsc {
-	cdgm "scripts/$1"
+    cdgm "scripts/$1"
 }
 
 function cdgn {
-	cdgm "GNU_Octave/$1"
+    cdgm "GNU_Octave/$1"
 }
 
 function cdgs {
-	cdsc "gentoo-scripts/$1"
+    cdsc "gentoo-scripts/$1"
 }
 
 function cdweb {
-	cd $WEB/$1
+    cd $WEB/$1
 }
 
 function cdfgi {
-	cd $FGI/$1
+    cd $FGI/$1
 }
