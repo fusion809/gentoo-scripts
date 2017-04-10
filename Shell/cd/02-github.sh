@@ -11,11 +11,15 @@ function cdgm {
 }
 
 function cdc {
-    cdgm "config/$@"
+    cdgm "config/$1"
 }
 
 function cdgc {
-    cdc "gentoo-config/$@"
+    cdc "gentoo-config"
+
+    if ! [[ -n $1 ]]; then
+         cd $1
+    fi
 }
 
 function cded {
@@ -57,5 +61,5 @@ function cdweb {
 }
 
 function cdfgi {
-    cd $FGI/$1
+    cdweb "fusion809.github.io/$1"
 }
