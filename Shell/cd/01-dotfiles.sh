@@ -14,6 +14,12 @@ function cdi {
     cdls "icons/$1"
 }
 
+alias cdli=cdi
+
 function cddd {
     cdls "desktop-directories/$1"
+}
+
+function cdlt {
+    cdls "themes/$1"
 }
