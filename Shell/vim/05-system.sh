@@ -1,12 +1,16 @@
+function vpak {
+    sudo vim /etc/portage/package.accept_keywords
+}
+
 function vpmc {
-	sudo vim /etc/portage/make.conf
+    sudo vim /etc/portage/make.conf
 }
 
 function vpm {
-	sudo vim /etc/portage/package.mask
+    sudo vim /etc/portage/package.mask
 }
 
 function vpu {
-	sudo vim /etc/portage/package.use
+    sudo vim /etc/portage/package.use
 }
 
