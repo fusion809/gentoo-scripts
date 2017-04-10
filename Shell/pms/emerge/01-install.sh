@@ -3,13 +3,13 @@ function emaw {
 }
 
 function emin {
-    sudo emerge -av "$@"
+    sudo emerge -av --noreplace "$@"
 }
 
 alias emi=emin
 
 function eminna {
-    sudo emerge "$@"
+    sudo emerge --noreplace "$@"
 }
 
 function empr {
