@@ -15,11 +15,7 @@ function cdc {
 }
 
 function cdgc {
-    cdc "gentoo-config"
-
-    if ! [[ -n $1 ]]; then
-         cd $1
-    fi
+    cdc "gentoo-config/$1"
 }
 
 function cded {

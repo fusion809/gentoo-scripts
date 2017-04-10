@@ -38,10 +38,6 @@ function cpc {
     sudo cp /var/lib/portage/world $GC/var/lib/portage
 }
 
-function cdgc {
-    cd $GC
-}
-
 function cup {
     cpc && cdgc && push "$1" && cd -
 }
