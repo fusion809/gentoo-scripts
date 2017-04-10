@@ -7,7 +7,11 @@ function cdp {
 }
 
 function cdpa {
-    cd "$HOME/Programs/AppImages"
+    cdp "AppImages/$1"
+}
+
+function cdpd {
+    cdp "Deb/$1"
 }
 
 function cdsh {
