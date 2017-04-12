@@ -1,5 +1,5 @@
 function cpc {
-    rm -rf $GC/etc
+    sudo rm -rf $GC/etc
 
     # config
     if ! [[ -d $GC/etc/portage ]]; then
