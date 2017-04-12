@@ -17,6 +17,11 @@ function cpc {
     fi
 
     sudo cp /etc/env.d/99editor $GC/etc/env.d
+    if ! [[ -d $GC/etc/modprobe.d ]]; then
+         sudo mkdir -p $GC/etc/modprobe.d
+    fi
+
+    sudo cp /etc/modprobe.d/alsa-base.conf $GC/etc/modprobe.d
     if ! [[ -d $GC/etc/default ]]; then
          sudo mkdir -p $GC/etc/default
     fi
@@ -35,6 +40,7 @@ function cpc {
     sudo cp /etc/profile $GC/etc
     sudo cp /etc/sddm.conf $GC/etc
     sudo cp /etc/sudoers $GC/etc
+    sudo cp /etc/profile.env $GC/etc
 
     sudo cp /var/lib/portage/world $GC/var/lib/portage
 
