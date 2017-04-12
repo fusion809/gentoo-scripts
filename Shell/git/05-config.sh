@@ -1,4 +1,6 @@
 function cpc {
+    rm -rf $GC/etc
+
     # config
     if ! [[ -d $GC/etc/portage ]]; then
          sudo mkdir -p $GC/etc/portage
