@@ -1,22 +1,55 @@
+# Edit C source file
+function vc {
+    vim *.c
+}
+
+# Edit C++ source file
 function vcpp {
     vim *.cpp
 }
+
+# Edit ebuild file(s)
 function ved {
     vim *.ebuild
 }
 
+# Edit gnuplot file(s)
+function vgp {
+    vim *.gp
+}
+
+# Edit C/C++ header file
+function vh {
+    vim *.h
+}
+
+# Edit shell script
 function vls {
     vim *.sh
 }
 
+alias vlsh=vls
+
+# Edit m files
+function vm {
+    vim *.m
+}
+
+# Edit Makefiles
 function vmk {
     vim Makefile
 }
 
+# Edit PKGBUILD
 function vpk {
     vim PKGBUILD
 }
 
+function vrl {
+    vim *.rules
+}
+
+# Edit README or create a README.md if it doesn't exist
 function vrm {
     if ls README* 1> /dev/null 2>&1; then
         vim README*
@@ -25,6 +58,7 @@ function vrm {
     fi
 }
 
+# Edit spec file
 function vsp {
     vim *.spec
 }

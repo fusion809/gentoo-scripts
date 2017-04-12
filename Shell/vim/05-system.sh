@@ -7,10 +7,10 @@ function vpmc {
 }
 
 function vpm {
-    sudo vim /etc/portage/package.mask
+    svd /etc/portage/package.mask
 }
 
 function vpu {
-    sudo vim /etc/portage/package.use
+    svd /etc/portage/package.use
 }
 

@@ -1,7 +1,7 @@
 function gvfgi {
-	gvd $FGI
+    gvd $FGI
 }
 
 function gvgn {
-	gvd $SCR/GNU_Octave
+    gvd $SCR/GNU_Octave
 }

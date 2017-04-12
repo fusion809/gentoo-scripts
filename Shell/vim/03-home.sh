@@ -1,39 +1,39 @@
 function gvle {
-	gvd $LE
+    gvd $LE
 }
 
 function gvsh {
-	gvd $HOME/Shell
+    gvd $HOME/Shell
 }
 
 function vbash {
-	vim $HOME/.bashrc
+    vim $HOME/.bashrc
 }
 
 function vcfe {
-	vd "$HOME/Documents/CodeLite/CPP-Math-Projects/$1"
+    vd "$HOME/Documents/CodeLite/CPP-Math-Projects/$1"
 }
 
 function gvcfe {
-	gvd "$HOME/Documents/CodeLite/CPP-Math-Projects/$1"
+    gvd "$HOME/Documents/CodeLite/CPP-Math-Projects/$1"
 }
 
 function vle {
-	vd $LE
+    vd $LE
 }
 
 function vrc {
-	vim $HOME/.vimrc
+    vim $HOME/.vimrc
 }
 
 function vsh {
-	vd $HOME/Shell
+    vd $HOME/Shell
 }
 
 function vspe {
-	vd $CFE
+    vd $CFE
 }
 
 function vzsh {
-	vim $HOME/.zshrc
+    vim $HOME/.zshrc
 }
