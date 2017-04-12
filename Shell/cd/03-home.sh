@@ -14,6 +14,10 @@ function cdpd {
     cdp "Deb/$1"
 }
 
+function cdpe {
+    cdp "exe/$1"
+}
+
 function cdsh {
     cd "$HOME/Shell/$1"
 }
