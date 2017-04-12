@@ -1,3 +1,7 @@
+function vfs {
+    sudo vim /etc/fstab
+}
+
 function vpak {
     sudo vim /etc/portage/package.accept_keywords
 }
