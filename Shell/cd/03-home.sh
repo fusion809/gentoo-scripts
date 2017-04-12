@@ -58,6 +58,8 @@ function cdtx {
     cd "$HOME/Textbooks/$1"
 }
 
+alias cdt=cdtx
+
 function cdvi {
     cd $HOME/"VirtualBox VMs"/ISOs/$1
 }
