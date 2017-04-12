@@ -11,7 +11,7 @@ function cpc {
          sudo mkdir -p $GC/etc/kernels
     fi
 
-    sudo cp -a /etc/kernels/* $GC/etc/kernels
+    sudo cp -a /usr/src/linux/.config $GC/etc/kernels/config-`uname -r`
     if ! [[ -d $GC/etc/env.d ]]; then
          sudo mkdir -p $GC/etc/env.d
     fi
