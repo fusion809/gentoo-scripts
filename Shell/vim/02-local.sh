@@ -40,6 +40,11 @@ function vmk {
     vim Makefile
 }
 
+# Edit metadata.xml
+function vmd {
+    vim metadata.xml
+}
+
 # Edit PKGBUILD
 function vpk {
     vim PKGBUILD
