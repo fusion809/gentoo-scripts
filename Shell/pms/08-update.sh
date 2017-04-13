@@ -1,3 +1,3 @@
 function update {
-    syncup && apm update --no-confirm && flatup
+    syncup && emrm && apm update --no-confirm && flatup
 }

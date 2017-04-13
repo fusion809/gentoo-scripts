@@ -1,16 +1,19 @@
 function ems {
-        emerge -s "$@"
+    emerge -s "$@"
 }
 
 function sync {
-        emerge --sync && layman -S
+    emerge --sync && layman -S
 }
 
 function syncup {
-        sync && emerge -uDU --with-bdeps=y @world
+    sync && emerge -uDU --with-bdeps=y @world
 }
 
 function emup {
-        emerge -uDU --with-bdeps=y @world
+    emerge -uDU --with-bdeps=y @world
 }
 
+function update {
+    syncup && emrm
+}
