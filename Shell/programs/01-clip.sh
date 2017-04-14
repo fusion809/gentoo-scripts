@@ -1,7 +1,7 @@
 function clipf {
-	xclip -sel clip < $1
+    xclip -sel clip < $1
 }
 
 function sclipf {
-	sudo xclip -sel clip < $1
+    sudo xclip -sel clip < $1
 }

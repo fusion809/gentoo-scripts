@@ -54,6 +54,10 @@ function cdobsh {
     cdobs "home:fusion809/$1"
 }
 
+function cdpi {
+    cd "$HOME/Pictures/$1"
+}
+
 function cdtx {
     cd "$HOME/Textbooks/$1"
 }
