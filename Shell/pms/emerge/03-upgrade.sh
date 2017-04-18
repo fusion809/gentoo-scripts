@@ -10,6 +10,10 @@ function emaup {
     sudo emerge --verbose-conflicts -auvDU --with-bdeps=y @world
 }
 
+function empvup {
+    sudo emerge --verbose-conflicts -pv -uDU --with-bdeps=y @world
+}
+
 function sync {
     sudo emerge --sync
 
