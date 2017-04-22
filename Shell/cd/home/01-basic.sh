@@ -11,7 +11,7 @@ function cdfo {
 }
 
 function cdm {
-    cd $HOME/Music/$1
+    cd "$HOME/Music/$1"
 }
 
 function cdpi {

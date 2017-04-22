@@ -1,3 +1,7 @@
+function gvcs {
+    gvd "$SCR/centos-scripts"
+}
+
 function gvfgi {
     gvd $FGI
 }
