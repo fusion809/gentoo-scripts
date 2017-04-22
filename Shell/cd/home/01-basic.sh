@@ -42,7 +42,7 @@ function cdvy {
 
 # VirtualBox VMs
 function cdvt {
-    cd "$HOME/"VirtualBox VMs"/$1"
+    cd "$HOME/VirtualBox VMs/$1"
 }
 
 function cdvi {
