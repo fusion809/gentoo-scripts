@@ -13,6 +13,27 @@ function ved {
     vim *.ebuild
 }
 
+# Edit gitignore
+function vgit {
+    if [[ -d .git ]]; then
+         vim .gitignore
+    elif [[ -d ../.git ]]; then
+         vim ../.gitignore
+    elif [[ -d ../../.git ]]; then
+         vim ../../.gitignore
+    elif [[ -d ../../../.git ]]; then
+         vim ../../../.gitignore
+    elif [[ -d ../../../../.git ]]; then
+         vim ../../../../.gitignore
+    elif [[ -d ../../../../../.git ]]; then
+         vim ../../../../../.gitignore
+    elif [[ -d ../../../../../../.git ]]; then
+         vim ../../../../../../.gitignore
+    elif [[ -d ../../../../../../../.git ]]; then
+         vim ../../../../../../../.gitignore
+    fi
+}
+
 # Edit gnuplot file(s)
 function vgp {
     vim *.gp
