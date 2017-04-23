@@ -3,7 +3,11 @@ function ems {
 }
 
 function sync {
-    emerge --sync && layman -S
+    emerge --sync
+
+    if [[ -f /usr/bin/layman ]]; then
+         layman -S
+    fi
 }
 
 function syncup {
