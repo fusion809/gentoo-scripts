@@ -14,6 +14,8 @@ function empvup {
     sudo emerge --verbose-conflicts -pv -uDU --with-bdeps=y @world
 }
 
+alias emuppv=empvup
+
 function sync {
     sudo emerge --sync
 

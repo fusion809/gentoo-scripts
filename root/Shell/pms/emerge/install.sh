@@ -1,15 +1,19 @@
 function emaw {
-        emerge --autounmask-write "$@"
+    emerge --autounmask-write "$@"
 }
 
 function emin {
-        emerge -av $@
+    emerge -av $@
 }
 
 function emmr {
-        emerge -av @module-rebuild
+    emerge @module-rebuild
+}
+
+function emmrav {
+    emerge -av @module-rebuild
 }
 
 function empr {
-        emerge -av @preserved-rebuild
+    emerge -av @preserved-rebuild
 }

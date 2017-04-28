@@ -11,11 +11,19 @@ function sync {
 }
 
 function syncup {
-    sync && emerge -uDU --with-bdeps=y @world
+    sync && emerge -uDU --with-bdeps=y --backtrack=100 @world
 }
 
 function emup {
-    emerge -uDU --with-bdeps=y @world
+    emerge -uDU --with-bdeps=y --backtrack=100 @world
+}
+
+function emuppv {
+    emerge -uDUpv --with-bdeps=y --backtrack=100 @world
+}
+
+function emaup {
+    emerge -uDU --with-bdeps=y --backtrack=100 --autounmask-write @world
 }
 
 function update {
