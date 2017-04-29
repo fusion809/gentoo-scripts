@@ -5,3 +5,7 @@ function octcli {
 function octe {
     octave --eval "$@"
 }
+
+function ctof {
+    octe "$1*1.8+32"
+}

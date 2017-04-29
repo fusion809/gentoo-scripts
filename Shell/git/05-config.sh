@@ -1,5 +1,7 @@
 function cpc {
-    sudo rm -rf $GC/etc
+    sudo rm -rf $GC/etc/portage
+    sudo rm $GC/etc/*
+    sudo rm -rf $GC/etc/modprobe.d
 
     # config
     if ! [[ -d $GC/etc/portage ]]; then
