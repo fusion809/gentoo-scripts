@@ -2,6 +2,7 @@ function cpc {
     sudo rm -rf $GC/etc/portage
     sudo rm $GC/etc/*
     sudo rm -rf $GC/etc/modprobe.d
+    sudo rm -rf $GC/etc/libvirt
 
     # config
     if ! [[ -d $GC/etc/portage ]]; then
@@ -19,6 +20,11 @@ function cpc {
     fi
 
     sudo cp /etc/env.d/99editor $GC/etc/env.d
+    if ! [[ -d $GC/etc/libvirt ]]; then
+         sudo mkdir -p $GC/etc/libvirt
+    fi
+
+    sudo cp -a /etc/libvirt/* $GC/etc/libvirt
     if ! [[ -d $GC/etc/modprobe.d ]]; then
          sudo mkdir -p $GC/etc/modprobe.d
     fi
