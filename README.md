@@ -1,5 +1,5 @@
 # gentoo-scripts
-Shell scripts for Calculate and Gentoo Linux, along with miscellaneous configuration files. 
+Shell scripts for Calculate and Gentoo Linux that are loaded on shell startup. 
 
 ```bash
 /bin/bash -c "$(wget -cqO- https://git.io/vVymX)"
