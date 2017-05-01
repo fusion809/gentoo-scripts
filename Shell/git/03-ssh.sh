@@ -1,28 +1,52 @@
+function cdgit {
+    if ! [[ -d .git ]]; then
+         cd ..
+    fi
+}
+
 function gitsw {
-  # $1 is the username of the repo
-  git remote rm origin
-  git remote rm upstream
-	CWD=${PWD##*/}
-	if [[ "$CWD" =~ ^\. ]]; then
-		GWD="${CWD#.}"
-	  if [[ -n "$1" ]]
-	    then
-	      git remote add origin git@github.com:$1/$GWD.git
-	      git remote add upstream git@github.com:$1/$GWD.git
-	    else
-	      git remote add origin git@github.com:fusion809/$GWD.git
-	      git remote add upstream git@github.com:fusion809/$GWD.git
-	  fi
-	else
-		if [[ -n "$1" ]]
-			then
-				git remote add origin git@github.com:$1/$CWD.git
-				git remote add upstream git@github.com:$1/$CWD.git
-			else
-				git remote add origin git@github.com:fusion809/$CWD.git
-				git remote add upstream git@github.com:fusion809/$CWD.git
-		fi
-	fi
+    # $1 is the username of the repo
+    git remote rm origin
+    git remote rm upstream
+
+    SCWD=$PWD
+
+    if ! [[ -d .git ]]; then
+         cd ..
+         if ! [[ -d .git ]]; then
+              cd ..
+              if ! [[ -d .git ]]; then
+                   cd ..
+                   if ! [[ -d .git ]]; then
+                        cd ..
+                        if ! [[ -d .git ]]; then
+                             cd ..
+                             cdgit
+                        fi
+                   fi
+              fi
+         fi
+    fi
+    CWD=${PWD##*/}
+    if [[ "$CWD" =~ ^\. ]]; then
+         GWD="${CWD#.}"
+         if [[ -n "$1" ]]; then
+              git remote add origin git@github.com:$1/$GWD.git
+              git remote add upstream git@github.com:$1/$GWD.git
+         else
+              git remote add origin git@github.com:fusion809/$GWD.git
+              git remote add upstream git@github.com:fusion809/$GWD.git
+         fi
+    else
+         if [[ -n "$1" ]]; then
+              git remote add origin git@github.com:$1/$CWD.git
+              git remote add upstream git@github.com:$1/$CWD.git
+         else
+              git remote add origin git@github.com:fusion809/$CWD.git
+              git remote add upstream git@github.com:fusion809/$CWD.git
+         fi
+    fi
+    cd $SCWD
 }
 
 alias SSH=gitsw

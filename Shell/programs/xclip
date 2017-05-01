@@ -1,0 +1,111 @@
+Portage 2.3.5 (python 3.4.6-final-0, default/linux/amd64/13.0/desktop/plasma/systemd, gcc-5.4.0, glibc-2.24-r1, 4.10.13-gentoo x86_64)
+=================================================================
+                         System Settings
+=================================================================
+System uname: Linux-4.10.13-gentoo-x86_64-Intel-R-_Core-TM-_i7-4700MQ_CPU_@_2.40GHz-with-gentoo-2.3
+KiB Mem:    16344312 total,    529248 free
+KiB Swap:          0 total,         0 free
+sh bash 4.4_p12
+ld GNU ld (Gentoo 2.27 p1.0) 2.27
+app-shells/bash:          4.4_p12::gentoo
+dev-java/java-config:     2.2.0-r3::gentoo
+dev-lang/perl:            5.24.1-r1::gentoo
+dev-lang/python:          2.7.13::gentoo, 3.4.6::gentoo
+dev-util/cmake:           3.8.0-r1::gentoo
+dev-util/pkgconfig:       0.29.2::gentoo
+sys-apps/baselayout:      2.3::gentoo
+sys-apps/openrc:          0.25::gentoo
+sys-apps/sandbox:         2.10-r4::gentoo
+sys-devel/autoconf:       2.13::gentoo, 2.69-r3::gentoo
+sys-devel/automake:       1.12.6-r1::gentoo, 1.13.4-r1::gentoo, 1.15-r2::gentoo
+sys-devel/binutils:       2.27::gentoo
+sys-devel/gcc:            5.4.0-r3::gentoo
+sys-devel/gcc-config:     1.8-r1::gentoo
+sys-devel/libtool:        2.4.6-r4::gentoo
+sys-devel/make:           4.2.1-r1::gentoo
+sys-kernel/linux-headers: 4.10::gentoo (virtual/os-headers)
+sys-libs/glibc:           2.24-r1::gentoo
+Repositories:
+
+gentoo
+    location: /usr/portage
+    sync-type: git
+    sync-uri: https://github.com/gentoo/gentoo.git
+    priority: -1000
+
+fusion809
+    location: /usr/local/fusion809-overlay
+    masters: gentoo
+
+flatpak-overlay
+    location: /usr/local/flatpak-overlay
+    sync-type: git
+    sync-uri: git://github.com/fosero/flatpak-overlay.git
+    masters: gentoo
+    priority: 50
+
+gamerlay
+    location: /var/lib/layman/gamerlay
+    sync-type: git
+    sync-uri: git://anongit.gentoo.org/proj/gamerlay.git
+    masters: gentoo
+    priority: 50
+
+games-overlay
+    location: /var/lib/layman/games-overlay
+    sync-type: git
+    sync-uri: git://github.com/hasufell/games-overlay.git
+    masters: gentoo
+    priority: 50
+
+grub2-themes
+    location: /var/lib/layman/grub2-themes
+    sync-type: git
+    sync-uri: git://github.com/gentoo/grub2-themes-overlay.git
+    masters: gentoo
+    priority: 50
+
+mozilla
+    location: /var/lib/layman/mozilla
+    sync-type: git
+    sync-uri: git://anongit.gentoo.org/proj/mozilla.git
+    masters: gentoo
+    priority: 50
+
+steam-overlay
+    location: /var/lib/layman/steam-overlay
+    sync-type: git
+    sync-uri: git://github.com/anyc/steam-overlay.git
+    masters: gentoo
+    priority: 50
+
+ACCEPT_KEYWORDS="amd64 ~amd64"
+ACCEPT_LICENSE="*"
+CBUILD="x86_64-pc-linux-gnu"
+CFLAGS="-O2 -pipe"
+CHOST="x86_64-pc-linux-gnu"
+CONFIG_PROTECT="/etc /usr/lib64/libreoffice/program/sofficerc /usr/share/config /usr/share/gnupg/qualified.txt"
+CONFIG_PROTECT_MASK="/etc/ca-certificates.conf /etc/dconf /etc/env.d /etc/fonts/fonts.conf /etc/gconf /etc/gentoo-release /etc/revdep-rebuild /etc/sandbox.d /etc/terminfo"
+CXXFLAGS="-O2 -pipe"
+DISTDIR="/usr/portage/distfiles"
+FCFLAGS="-O2 -pipe"
+FEATURES="assume-digests binpkg-logs config-protect-if-modified distlocks ebuild-locks fixlafiles merge-sync news parallel-fetch preserve-libs protect-owned sandbox sfperms strict unknown-features-warn unmerge-logs unmerge-orphans userfetch userpriv usersandbox usersync xattr"
+FFLAGS="-O2 -pipe"
+GENTOO_MIRRORS="http://ftp.swin.edu.au/gentoo"
+LANG="en_AU.UTF-8"
+LDFLAGS="-Wl,-O1 -Wl,--as-needed"
+MAKEOPTS="-j4"
+PKGDIR="/usr/portage/packages"
+PORTAGE_CONFIGROOT="/"
+PORTAGE_RSYNC_OPTS="--recursive --links --safe-links --perms --times --omit-dir-times --compress --force --whole-file --delete --stats --human-readable --timeout=180 --exclude=/distfiles --exclude=/local --exclude=/packages --exclude=/.git"
+PORTAGE_TMPDIR="/var/tmp"
+USE="X a52 aac acl acpi alsa amd64 berkdb branding bumblebee bzip2 cairo cdda cdr cli cracklib crypt cups cxx dbus declarative dri dts dvd dvdr emboss encode exif fam firefox flac fortran gdbm gif glamor gpm gtk iconv ipv6 jpeg kde kipi kms kwallet lcms ldap libnotify mad mng modules mp3 mp4 mpeg multilib ncurses nls nptl nvidia ogg opengl openmp pam pango pcre pdf phonon plasma png policykit ppds qml qt3support qt4 qt5 readline sdl seccomp semantic-desktop session spell ssl startup-notification svg systemd tcpd tiff truetype udev udisks unicode upower usb vorbis wayland widgets wxwidgets x264 xattr xcb xcomposite xinerama xml xscreensaver xv xvid xwayland zlib" ABI_X86="64" ALSA_CARDS="ali5451 als4000 atiixp atiixp-modem bt87x ca0106 cmipci emu10k1x ens1370 ens1371 es1938 es1968 fm801 hda-intel intel8x0 intel8x0m maestro3 trident usb-audio via82xx via82xx-modem ymfpci" APACHE2_MODULES="authn_core authz_core socache_shmcb unixd actions alias auth_basic authn_alias authn_anon authn_dbm authn_default authn_file authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cgi cgid dav dav_fs dav_lock deflate dir disk_cache env expires ext_filter file_cache filter headers include info log_config logio mem_cache mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias" CALLIGRA_FEATURES="kexi words flow plan sheets stage tables krita karbon braindump author" COLLECTD_PLUGINS="df interface irq load memory rrdtool swap syslog" CPU_FLAGS_X86="mmx mmxext sse sse2" ELIBC="glibc" GPSD_PROTOCOLS="ashtech aivdm earthmate evermore fv18 garmin garmintxt gpsclock isync itrax mtk3301 nmea ntrip navcom oceanserver oldstyle oncore rtcm104v2 rtcm104v3 sirf skytraq superstar2 timing tsip tripmate tnt ublox ubx" INPUT_DEVICES="evdev synaptics" KERNEL="linux" L10N="en en_AU en_GB en_US en-AU en-GB en-US" LCD_DEVICES="bayrad cfontz cfontz633 glk hd44780 lb216 lcdm001 mtxorb ncurses text" LIBREOFFICE_EXTENSIONS="presenter-console presenter-minimizer" OFFICE_IMPLEMENTATION="libreoffice" PHP_TARGETS="php5-6" PYTHON_SINGLE_TARGET="python3_4" PYTHON_TARGETS="python2_7 python3_4" RUBY_TARGETS="ruby21 ruby22" USERLAND="GNU" VIDEO_CARDS="nvidia intel" XTABLES_ADDONS="quota2 psd pknock lscan length2 ipv4options ipset ipp2p iface geoip fuzzy condition tee tarpit sysrq steal rawnat logmark ipmark dhcpmac delude chaos account"
+Unset:  CC, CPPFLAGS, CTARGET, CXX, EMERGE_DEFAULT_OPTS, INSTALL_MASK, LC_ALL, PORTAGE_BUNZIP2_COMMAND, PORTAGE_COMPRESS, PORTAGE_COMPRESS_FLAGS, PORTAGE_RSYNC_EXTRA_OPTS, USE_PYTHON
+
+=================================================================
+                        Package Settings
+=================================================================
+
+net-wireless/broadcom-sta-6.30.223.271-r4::gentoo was built with the following:
+USE="" ABI_X86="64"
+
