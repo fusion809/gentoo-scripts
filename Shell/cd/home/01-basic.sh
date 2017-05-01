@@ -18,6 +18,10 @@ function cdpi {
     cd "$HOME/Pictures/$1"
 }
 
+function cdps {
+    cdpi "Screenshots/$1"
+}
+
 function cdsh {
     cd "$HOME/Shell/$1"
 }
