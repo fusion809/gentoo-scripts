@@ -3,6 +3,8 @@ function push {
 
     if `printf "$PWD" | grep 'AUR' > /dev/null 2>&1`; then
          mksrcinfo
+    elif `printf "$PWD" | grep 'fusion809-overlay' > /dev/null 2>&1`; then
+         repoman manifest -q
     fi
 
     git add --all                                        # Add all files to git
