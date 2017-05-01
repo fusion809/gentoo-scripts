@@ -11,22 +11,11 @@ function gitsw {
 
     SCWD=$PWD
 
-    if ! [[ -d .git ]]; then
-         cd ..
-         if ! [[ -d .git ]]; then
-              cd ..
-              if ! [[ -d .git ]]; then
-                   cd ..
-                   if ! [[ -d .git ]]; then
-                        cd ..
-                        if ! [[ -d .git ]]; then
-                             cd ..
-                             cdgit
-                        fi
-                   fi
-              fi
-         fi
-    fi
+    for i in {1..20}
+    do
+         cdgit
+    done
+
     CWD=${PWD##*/}
     if [[ "$CWD" =~ ^\. ]]; then
          GWD="${CWD#.}"
