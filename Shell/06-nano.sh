@@ -1,3 +1,3 @@
 function nzsh {
-	nano $HOME/.zshrc
+     nano $HOME/.zshrc
 }

@@ -1,3 +1,3 @@
 function etup {
-	sudo etc-update --automode -5
+     sudo etc-update --automode -5
 }

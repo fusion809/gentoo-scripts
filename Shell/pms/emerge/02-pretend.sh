@@ -11,5 +11,5 @@ function empv {
 }
 
 function emupv {
-	sudo emerge --verbose-conflicts -pvuDU --with-bdeps=y @world
+     sudo emerge --verbose-conflicts -pvuDU --with-bdeps=y @world
 }

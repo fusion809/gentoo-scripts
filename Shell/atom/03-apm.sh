@@ -1,11 +1,11 @@
 function apmi {
-	apm install "$@"
+     apm install "$@"
 }
 
 function apmr {
-	apm remove "$@"
+     apm remove "$@"
 }
 
 function apmup {
-	apm update --no-confirm
+     apm update --no-confirm
 }

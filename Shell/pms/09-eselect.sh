@@ -1,3 +1,3 @@
 function enr {
-	sudo eselect news read
+     sudo eselect news read
 }
