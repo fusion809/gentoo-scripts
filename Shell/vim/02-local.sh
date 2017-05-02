@@ -88,3 +88,7 @@ function vrm {
 function vsp {
     vim *.spec
 }
+
+function vzt {
+    vim hcompact.zsh-theme
+}
