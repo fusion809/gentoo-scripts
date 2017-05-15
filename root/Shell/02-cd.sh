@@ -21,3 +21,7 @@ function cdpt {
 function cdsl {
     cd /usr/src/linux
 }
+
+function cdvl {
+    cd /var/lib/layman
+}
