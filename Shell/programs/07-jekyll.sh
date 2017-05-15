@@ -1,3 +1,3 @@
 function jekex {
-    bundle exec jekyll serve -I -D
+    bundle exec jekyll serve -I -D --future
 }
