@@ -1,6 +1,6 @@
 function cpc {
     sudo rm -rf $GC/etc/portage
-    sudo rm $GC/etc/*
+    find $GC/etc -maxdepth 1 -type f | xargs -I {} sudo rm {}
     sudo rm -rf $GC/etc/modprobe.d
     sudo rm -rf $GC/etc/libvirt
 
