@@ -9,3 +9,7 @@ function gvfgi {
 function gvgn {
     gvd $SCR/GNU_Octave
 }
+
+function gvpy {
+    gvd "python-scripts/$1"
+}
