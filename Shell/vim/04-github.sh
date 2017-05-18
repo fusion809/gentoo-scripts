@@ -11,5 +11,5 @@ function gvgn {
 }
 
 function gvpy {
-    gvd "python-scripts/$1"
+    gvd "$SCR/python-scripts"
 }
