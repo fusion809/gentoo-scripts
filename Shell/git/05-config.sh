@@ -59,3 +59,14 @@ function cup {
     cpc && cdgc && push "$1" && cd -
 }
 
+function cpi3 {
+    cp $HOME/.Xresources $CFG/i3-configs
+    cp $HOME/.i3status.conf $CFG/i3-configs
+    cp $HOME/UXTerm $CFG/i3-configs
+    cp $HOME/XTerm $CFG/i3-configs
+    cp -a $HOME/.i3 $CFG/i3-configs
+}
+
+function i3up {
+    cpi3 && cdi3 && push "$1" && cd -
+}

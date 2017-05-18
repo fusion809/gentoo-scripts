@@ -2,12 +2,16 @@ function vfs {
     sudo vim /etc/fstab
 }
 
+function vp {
+    sudo vim /etc/portage/$1
+}
+
 function vpak {
-    sudo vim /etc/portage/package.accept_keywords
+    vp "package.accept_keywords"
 }
 
 function vpmc {
-    sudo vim /etc/portage/make.conf
+    vp "make.conf"
 }
 
 function vpm {
