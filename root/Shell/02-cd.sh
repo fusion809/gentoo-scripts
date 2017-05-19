@@ -25,3 +25,7 @@ function cdsl {
 function cdvl {
     cd /var/lib/layman
 }
+
+function cdb {
+    cd /boot
+}
