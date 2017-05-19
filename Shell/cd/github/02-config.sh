@@ -6,6 +6,6 @@ function cdgc {
     cdc "gentoo-config/$1"
 }
 
-function cdi3 {
+function cdci3 {
     cdc "i3-configs/$1"
 }

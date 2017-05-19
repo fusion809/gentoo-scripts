@@ -69,5 +69,5 @@ function cpi3 {
 }
 
 function i3up {
-    cpi3 && cdi3 && push "$1" && cd -
+    cpi3 && cdci3 && push "$1" && cd -
 }
