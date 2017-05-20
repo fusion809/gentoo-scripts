@@ -22,3 +22,6 @@ function vpu {
     svd /etc/portage/package.use
 }
 
+function vs {
+    sudo vim /etc/sddm.conf
+}
