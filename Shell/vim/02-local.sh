@@ -44,6 +44,11 @@ function vh {
     vim *.h
 }
 
+# Edit LICENSE file
+function vlic {
+    vim LICENSE
+}
+
 # Edit shell script
 function vls {
     vim *.sh
