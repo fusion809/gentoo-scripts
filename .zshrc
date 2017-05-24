@@ -56,7 +56,7 @@ plugins=(git zsh-syntax-highlighting safe-paste zsh-completions github)
 autoload -U compinit && compinit
 source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-export PATH=/usr/local/bin:$PATH:/bin:/sbin:/usr/sbin
+export PATH=$PATH:/bin:/sbin:/usr/sbin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
