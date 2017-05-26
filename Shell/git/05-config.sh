@@ -62,6 +62,7 @@ function cup {
 function cpi3 {
     rm -rf $CFG/i3-configs/.i3
     cp $HOME/.Xresources $CFG/i3-configs
+    cp $HOME/.xsession $CFG/i3-configs
     cp $HOME/.i3status.conf $CFG/i3-configs
     cp $HOME/UXTerm $CFG/i3-configs
     cp $HOME/XTerm $CFG/i3-configs
