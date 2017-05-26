@@ -16,3 +16,7 @@ fi
 
 
 # Put your fun stuff here.
+for i in $HOME/Shell/*.sh
+do
+    . "$i"
+done
