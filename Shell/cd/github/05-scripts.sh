@@ -34,6 +34,10 @@ function cdms {
     cdsc "mageia-scripts/$1"
 }
 
+function cdns {
+    cdsc "nixos-scripts/$1"
+}
+
 function cdpy {
     cdsc "python-scripts/$1"
 }
