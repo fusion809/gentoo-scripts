@@ -83,34 +83,75 @@ function ovimup {
          osc ci -m "Bumping version to $pkgver"
     fi
 }
-function vimup {
 
+# Update Vim in OBS, fusion809-overlay and GVim.AppImage repo to latest
+function vimup {
+    # Determine latest Vim version by reading Vim releases page on GitHub
     pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+
+    ############################################################
+    ##################### app-editors/vim ######################
+    ############################################################
+
+    # Move to app-editors/vim dir
     pushd $HOME/fusion809-overlay/app-editors/vim
+
+    # Determine latest ebuild for Vim's pkgver 
     lver_vim=$(ls | grep ebuild | sort -u | tail -n 2 | head -n 1 | cut -d '-' -f 2 | sed 's/\.ebuild//g')
 
+    # Check if latest ebuild ver and latest Vim ver match
     if ! [[ $lver_vim == $pkgver ]]; then
+        # Bump the ebuild if they do not match
         # Wildcard is required as otherwise -r1, -r2, -r3, etc. will be ignored as suffixes.
         mv vim-$lver_vim*.ebuild vim-$pkgver.ebuild
+        # Update manifests and merge package
         sudo ebuild vim-$pkgver.ebuild manifest merge
     fi
+
+    # Pop out of app-editors/vim dir
     popd
 
+    ############################################################
+    ################### app-editors/vim-core ###################
+    ############################################################
+    # Change into app-editors/vim-core dir
     pushd $HOME/fusion809-overlay/app-editors/vim-core
+
+    # Get version of the newest ebuild in app-editors/vim-core
     lver_vimc=$(ls | grep ebuild | sort -u | tail -n 2 | head -n 1 | cut -d '-' -f 3 | sed 's/\.ebuild//g')
+
+    # Check if pkgver and lver_vimc match
     if ! [[ $lver_vimc == $pkgver ]]; then
+        # bump the ebuild if it they do not match
         mv vim-core-$lver_vimc*.ebuild vim-core-$pkgver.ebuild
+        # Update manifests and merge package
         sudo ebuild vim-core-$pkgver.ebuild manifest merge
     fi
+
+    # Pop back out
     popd
 
+    ############################################################
+    ##################### app-editors/gvim #####################
+    ############################################################
+    # Change into app-editors/gvim
     pushd $HOME/fusion809-overlay/app-editors/gvim
+
+    # Determine version of latest ebuild
     lver_gvim=$(ls | grep ebuild | sort -u | tail -n 2 | head -n 1 | cut -d '-' -f 2 | sed 's/\.ebuild//g')
+
+    # Check if version matches pkgver
     if ! [[ $lver_gvim == $pkgver ]]; then
+        # Bump ebuild to pkgver if they do not match
         mv gvim-$lver_gvim*.ebuild gvim-$pkgver.ebuild
+        # Update manifests and merge package
         sudo ebuild gvim-$pkgver.ebuild manifest merge
     fi
+
+    # Commit to repo
     push "Bumping version to $pkgver"
+
+    # Pop out
     popd
 
     printf '\e[1;34m%-0s\e[m' "Running ovimup vim."
@@ -126,6 +167,7 @@ function vimup {
     ovimup "vim-redhat"
 }
 
+# Update Brave web browser in fusion809-overlay to latest version
 function bravup {
     cdfo www-client/brave-bin
     PBRAVE_VER=$(ls | grep ebuild | cut -d '-' -f 3 | sed 's/\.ebuild//g')
