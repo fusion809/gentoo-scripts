@@ -5,7 +5,7 @@ function weathv {
 alias weather=weathv
 
 function weathd {
-    weathv | head -n "$1" | tail -n 1 | sed 's/[-\.\ \:\/\_\;]//g'
+    weathv | head -n "$1" | tail -n 1 | sed 's|[-\.\ \:\/\_\;]||g'
 }
 
 alias weatherd=weathd
