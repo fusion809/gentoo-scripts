@@ -131,8 +131,8 @@ function bravup {
     PBRAVE_VER=$(ls | grep ebuild | cut -d '-' -f 3 | sed 's/\.ebuild//g')
     CBRAVE_VER=$(wget -q https://github.com/brave/browser-laptop/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/[a-z]//g' | sed 's/\.*$//g' | sed 's/\.tar\.gz//g')
 
-    mv brave-bin-${PBRAVE_BIN}.ebuild brave-bin-${CBRAVE_BIN}.ebuild
+    mv brave-bin-${PBRAVE_VER}.ebuild brave-bin-${CBRAVE_VER}.ebuild
     sudo rm /usr/portage/distfiles/Brave.tar.gz
-    sudo ebuild brave-bin-${CBRAVE_BIN}.ebuild manifest merge
-    push "[www-client/brave-bin] Bumping to ${CBRAVE_BIN}"
+    sudo ebuild brave-bin-${CBRAVE_VER}.ebuild manifest merge
+    push "[www-client/brave-bin] Bumping to ${CBRAVE_VER}"
 }
