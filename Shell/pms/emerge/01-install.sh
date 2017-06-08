@@ -24,6 +24,10 @@ function eminnna {
     sudo emerge --noreplace "$@"
 }
 
+function emmr {
+    sudo emerge @module-rebuild
+}
+
 function empr {
     sudo emerge @preserved-rebuild
 }
