@@ -67,6 +67,9 @@ function cpi3 {
     cp $HOME/UXTerm $CFG/i3-configs
     cp $HOME/XTerm $CFG/i3-configs
     cp -a $HOME/.i3 $CFG/i3-configs
+    sudo cp /usr/local/bin/optirun-0ad $CFG/i3-configs/usr/local/bin
+    sudo cp /usr/local/bin/rs-launcher $CFG/i3-configs/usr/local/bin
+    sudo cp /usr/local/bin/scrnshot $CFG/i3-configs/usr/local/bin
 }
 
 function i3up {
