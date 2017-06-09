@@ -15,7 +15,7 @@ function vi3 {
 }
 
 function vi3s {
-    vim $HOME/.i3status.sh
+    vim $HOME/.i3/i3status.sh
 }
 
 function vle {
