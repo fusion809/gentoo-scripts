@@ -10,6 +10,14 @@ function vconf {
     vim $HOME/.i3/config
 }
 
+function vi3 {
+    vd "$HOME/.i3"
+}
+
+function vi3s {
+    vim $HOME/.i3status.sh
+}
+
 function vle {
     vd $LE
 }
