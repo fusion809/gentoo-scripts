@@ -6,6 +6,10 @@ function vcfe {
     vd "$HOME/Documents/CodeLite/CPP-Math-Projects/$1"
 }
 
+function vconf {
+    vim $HOME/.i3/config
+}
+
 function vle {
     vd $LE
 }
