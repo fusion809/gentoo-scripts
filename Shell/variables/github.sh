@@ -9,6 +9,7 @@ export WEB=$GHUBM/websites
 
 export FGI=$WEB/fusion809.github.io
 export GC=$CFG/gentoo-config
+export I3=$CFG/i3-configs
 export GS=$SCR/gentoo-scripts
 export ST=$PKG/sabayon-tools
 export VI=$ED/vim
