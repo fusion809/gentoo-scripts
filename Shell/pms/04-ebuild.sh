@@ -174,7 +174,7 @@ function bravup {
     CBRAVE_VER=$(wget -q https://github.com/brave/browser-laptop/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/[a-z]//g' | sed 's/\.*$//g' | sed 's/\.tar\.gz//g')
     BRAVE_TAR=$(wget -q https://github.com/brave/browser-laptop/releases -O - | grep "$CBRAVE_VER" | grep "Brave.tar.bz2")
 
-    if [[ $PBRAVE_VER == $CBRAVE_VER ]] && `echo $BRAVE_TAR > /dev/null 2>&1`; then
+    if ! [[ $PBRAVE_VER == $CBRAVE_VER ]] && `echo $BRAVE_TAR > /dev/null 2>&1`; then
          mv brave-bin-${PBRAVE_VER}.ebuild brave-bin-${CBRAVE_VER}.ebuild
          rm Manifest
          sudo ebuild brave-bin-${CBRAVE_VER}.ebuild manifest merge
