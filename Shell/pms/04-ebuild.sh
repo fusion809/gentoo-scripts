@@ -176,7 +176,7 @@ function bravup {
 
     if ! [[ $PBRAVE_VER == $CBRAVE_VER ]] && `echo $BRAVE_TAR > /dev/null 2>&1`; then
          mv brave-bin-${PBRAVE_VER}.ebuild brave-bin-${CBRAVE_VER}.ebuild
-         rm Manifest
+         sudo rm -rf Manifest
          sudo ebuild brave-bin-${CBRAVE_VER}.ebuild manifest merge
          push "[www-client/brave-bin] Bumping to ${CBRAVE_VER}"
     else
