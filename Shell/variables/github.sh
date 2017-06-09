@@ -13,3 +13,4 @@ export GS=$SCR/gentoo-scripts
 export ST=$PKG/sabayon-tools
 export VI=$ED/vim
 export VM=$PKG/fusion809-overlay
+export FO=$VM
