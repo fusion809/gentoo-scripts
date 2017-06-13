@@ -1,9 +1,5 @@
-function cdsh {
-    cd $HOME/Shell
-}
-
-function cdu {
-    cd /etc/portage/package.use
+function cdb {
+    cd /boot
 }
 
 function cdm {
@@ -18,14 +14,26 @@ function cdpt {
     cd /usr/portage
 }
 
+function cds {
+    cd /usr/src/"$1"
+}
+
+function cdsh {
+    cd $HOME/Shell
+}
+
 function cdsl {
-    cd /usr/src/linux
+    if [[ -n $1 ]]; then
+         cds "linux-$1"
+    else
+         cds "linux"
+    fi
+}
+
+function cdu {
+    cd /etc/portage/package.use
 }
 
 function cdvl {
     cd /var/lib/layman
-}
-
-function cdb {
-    cd /boot
 }
