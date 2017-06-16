@@ -68,16 +68,26 @@ function ps_pm {
   fi
 }
 
+function ps_gax {
+    ps ax | grep $@
+}
+
 function ps-apl {
-    ps_mem -p $(ps ax | grep "$1" | grep -v "grep" | cut -d ' ' -f 2 | sed ':a;N;$!ba;s/\n/,/g')
+    ARG=$(ps_gax "$1" | grep -v "grep")
+    ARC1=$(printf $ARG | cut -d ' ' -f 1)
+    ARC2=$(printf $ARG | cut -d ' ' -f 2)
+
+    if ! `printf $ARC2 | sed 's/pts.*//g' | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g' > /dev/null 2>&1`; then
+         ps_mem -p $(printf $ARC1 | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g')
+    elif `printf $ARC1 | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g' > /dev/null 2>&1`; then
+         ps_mem -p $(printf $ARC2 | sed 's/pts.*//g' | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g'),$(printf $ARC1 | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g') || ps_mem -p $(printf $ARC1 | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g')
+    else
+         ps_mem -p $(printf $ARC1 | grep "[0-9]" | sed ':a;N;$!ba;s/\n/,/g')
+    fi
 }
 
 function ps_find {
-  pidof $@ | tr '\ ' ','
-}
-
-function ps_gax {
-  ps ax | grep $@
+    pidof $@ | tr '\ ' ','
 }
 
 function ps_gist {
