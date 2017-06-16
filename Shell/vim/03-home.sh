@@ -14,6 +14,10 @@ function vi3 {
     vd "$HOME/.i3"
 }
 
+function vi3p {
+    vim $HOME/.i3/i3pystatus.py
+}
+
 function vi3s {
     vim $HOME/.i3/i3status.sh
 }

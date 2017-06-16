@@ -1,12 +1,13 @@
 function manhtml {
-    bzcat /usr/share/man/man${2//[a-z]}/$1.$2.bz2 | man2html >> $WEB/man/$1.$2.html
+    bzcat /usr/share/man/man${2//[a-z]}/$1.$2.bz2 | man2html > $WEB/man/$1.$2.html
     sudo chmod 777 $WEB/man/$1.$2.html
 }
 
 function manhtmlg {
-    bzcat /usr/share/gcc-data/x86_64-pc-linux-gnu/6.3.0/man/man${2}/$1.$2.bz2 | man2html >> $WEB/man/$1.$2.html
+    cat /usr/share/gcc-data/x86_64-pc-linux-gnu/6.3.0/man/man${2}/$1.$2 | man2html >> $WEB/man/$1.$2.html
     sudo chmod 777 $WEB/man/$1.$2.html
 }
+
 function manhtmlp {
     L=$(equery files "$1" | grep /usr/share/man/man | grep "bz2")
     for i in $L
