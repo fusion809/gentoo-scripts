@@ -68,6 +68,10 @@ function ps_pm {
   fi
 }
 
+function ps-apl {
+    ps_mem -p $(ps ax | grep "$1" | grep -v "grep" | cut -d ' ' -f 2 | sed ':a;N;$!ba;s/\n/ /g')
+}
+
 function ps_find {
   pidof $@ | tr '\ ' ','
 }
