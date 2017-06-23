@@ -1,5 +1,5 @@
 function cdgit {
-    if ! [[ -d .git ]]; then
+    if ! ( [[ -d .git ]] || [[ -f .git ]] ); then
          cd ..
     fi
 }
