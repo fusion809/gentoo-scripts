@@ -75,3 +75,12 @@ function cpi3 {
 function i3up {
     cdci3 && git checkout gentoo && cpi3 && push "$1" && cd -
 }
+
+function cpsw {
+    cp /usr/local/bin/swimport $CFG/sway-config/usr/local/bin
+    cp $HOME/.config/sway/config $CFG/sway-config
+}
+
+function swup {
+    cdcsw && cpsw && push "$1" && cd -
+}

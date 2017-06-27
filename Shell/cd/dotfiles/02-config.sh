@@ -5,3 +5,7 @@ function cdcf {
 function cdi3 {
     cd "$HOME/.i3/$1"
 }
+
+function cdsw {
+    cdcf "sway/$1"
+}
