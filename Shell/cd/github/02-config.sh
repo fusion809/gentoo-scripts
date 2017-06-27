@@ -9,3 +9,7 @@ function cdgc {
 function cdci3 {
     cdc "i3-configs/$1"
 }
+
+function cdcsw {
+    cdc "sway-config/$1"
+}
