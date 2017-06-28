@@ -63,13 +63,7 @@ fi
 # Remember, for this to work you need your SSH keys setup
 # https://help.github.com/articles/generating-ssh-keys/
 function start_agent {
-  echo "Initializing new SSH agent..."
-  # spawn ssh-agent
-  /usr/bin/ssh-agent | /bin/sed 's/^echo/#echo/' > "${SSH_ENV}"
-  echo succeeded
-  chmod 600 "${SSH_ENV}"
-  . "${SSH_ENV}" > /dev/null
-  /usr/bin/ssh-add
+    eval `keychain -q --eval id_rsa`
 }
 
 if [[ -f "${SSH_ENV}" ]]; then
