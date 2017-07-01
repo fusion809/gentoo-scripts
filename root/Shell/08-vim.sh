@@ -22,6 +22,10 @@ function vpu {
 	vim /etc/portage/package.use
 }
 
+function vsd {
+	vim /etc/sddm.conf
+}
+
 function vsh {
 	pushd $HOME/Shell
 	vim
