@@ -84,8 +84,7 @@ function ovimup {
     fi
 }
 
-# Update Vim in OBS, fusion809-overlay and GVim.AppImage repo to latest
-function vimup {
+function vimupb {
     # Determine latest Vim version by reading Vim releases page on GitHub
     pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
 
@@ -153,6 +152,11 @@ function vimup {
 
     # Pop out
     popd
+}
+
+# Update Vim in OBS, fusion809-overlay and GVim.AppImage repo to latest
+function vimup {
+    vimupb
 
     printf '\e[1;34m%-0s\e[m' "Running ovimup vim."
     printf "\n"
