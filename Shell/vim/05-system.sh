@@ -25,3 +25,5 @@ function vpu {
 function vs {
     sudo vim /etc/sddm.conf
 }
+
+alias vsd=vs
