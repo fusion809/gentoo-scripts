@@ -7,11 +7,11 @@ function emin {
 }
 
 function emmr {
-    emerge @module-rebuild
+    emerge --keep-going @module-rebuild
 }
 
 function emmrav {
-    emerge -av @module-rebuild
+    emerge -av --keep-going @module-rebuild
 }
 
 function empr {
