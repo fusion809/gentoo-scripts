@@ -1,0 +1,193 @@
+#!/bin/bash
+if ! [[ -d /data/GitHub ]]; then
+    sudo mount /dev/sdb1 /data
+fi
+
+# Date
+function calc {
+    TZ="Australia/Brisbane" /bin/date +"%$1"
+}
+
+S=$(calc S)
+M=$(calc M)
+H=$(calc H)
+D=$(calc d)
+m=$(calc m)
+Y=$(calc Y)
+
+timestamp="${H}:${M}:${S} ${D}/${m}/${Y}"
+printf "$timestamp\n" > /tmp/vim
+
+function cdobsh {
+    cd /home/fusion809/OBS/home:fusion809/$1
+}
+
+function git-branch {
+    /usr/bin/hub rev-parse --abbrev-ref HEAD
+}
+
+function push {
+    if `printf "$PWD" | /bin/grep 'AUR' > /dev/null 2>&1`; then
+         /usr/bin/mksrcinfo
+    elif `printf "$PWD" | /bin/grep 'fusion809-overlay' > /dev/null 2>&1`; then
+         pushd $HOME/fusion809-overlay && /usr/bin/sudo /usr/bin/repoman manifest -q && popd
+    fi
+    /usr/bin/hub add --all
+    /usr/bin/hub commit -m "$1"
+    /usr/bin/hub push origin $(git-branch)
+}
+
+function ovimup {
+    cdobsh $1
+    pkgver=$(/usr/bin/wget -q https://github.com/vim/vim/releases -O - | /bin/grep "tar\.gz" | /usr/bin/head -n 1 | /usr/bin/cut -d '/' -f 5 | /usr/bin/cut -d '"' -f 1 | /bin/sed 's/v//g' | /bin/sed 's/\.tar\.gz//g')
+    baseversion=$(echo $pkgver | /bin/sed 's/\.[0-9]*$//g')
+    patchversion=$(echo $pkgver | /bin/sed "s/$baseversion//g" | /bin/sed 's/\.//g')
+    vim_baseversion=$(/bin/cat vim.spec | /bin/grep "%define.*baseversion" | /bin/sed 's/%define.*baseversion\s*//g' | /usr/bin/head -n 1)
+    vim_patchversion=$(/bin/cat vim.spec | /bin/grep "%define.*patchlevel" | /bin/sed 's/%define.*patchlevel\s*//g' | /usr/bin/head -n 1)
+
+    if [[ $baseversion != $vim_baseversion ]]; then
+
+         /bin/sed -i -e "s|baseversion $vim_baseversion|baseversion $baseversion|g" vim.spec
+         /bin/sed -i -e "s|$vim_baseversion|$baseversion|g" /home/fusion809/OBS/home:fusion809/gvim-gtk2/PKGBUILD
+         /bin/sed -i -e 's|Release:       [0-9].*|Release:       1|g' vim.spec
+
+         if [[ "$1" == "vim" ]]; then
+
+              /bin/sed -i -e "s|$vim_baseversion|$baseversion|g" /home/fusion809/AUR/gvim-gtk2/PKGBUILD
+              /bin/sed -i -e "s|$vim_baseversion|$baseversion|g" /home/fusion809/GitHub/mine/packaging/PKGBUILDs/gvim-{gtk2,gtk3}/PKGBUILD
+
+         fi
+
+    fi
+
+    if [[ $patchversion != $vim_patchversion ]]; then
+         /bin/sed -i -e "s|patchlevel $vim_patchversion|patchlevel $patchversion|g" vim.spec
+
+         if [[ -f PKGBUILD ]]; then
+              /bin/sed -i -e "s|$vim_patchversion|$patchversion|g" PKGBUILD
+         fi
+
+         /bin/sed -i -e 's|Release:       [0-9].*|Release:       1|g' vim.spec
+
+         if [[ "$1" == "vim" ]]; then
+
+              /bin/sed -i -e "s|$vim_patchversion|$patchversion|g" {/home/fusion809/OBS/home:fusion809/gvim-gtk2,$HOME/AUR/gvim-gtk2,/home/fusion809/GitHub/mine/packaging/PKGBUILDs/gvim-gtk2,/home/fusion809/GitHub/mine/packaging/PKGBUILDs/gvim-gtk3}/PKGBUILD
+
+              /bin/sed -i -e "s|$vim_baseversion.$vim_patchversion|$pkgver|g" /home/fusion809/OBS/home:fusion809/vim-debian/{debian.dsc,_service}
+
+              time=$(/bin/date +"%a, %d %b %Y %H:%M:%S")
+              /bin/sed -i "1s/^/vim (2:$pkgver-1) trusty; urgency=medium\n\n  * New upstream release\n\n -- Brenton Horne <brentonhorne77@gmail.com>  $time +1000\n\n/" /home/fusion809/OBS/home:fusion809/vim-debian/debian.changelog
+
+              cd /home/fusion809/AUR/gvim-gtk2
+              push "Bumping to $pkgver"
+              cd -
+
+              cd /home/fusion809/GitHub/mine/packaging/PKGBUILDs/gvim-gtk2
+              push "Bumping to $pkgver"
+              cd -
+
+              cd /home/fusion809/GitHub/mine/packaging/PKGBUILDs/gvim-gtk3
+              push "Bumping to $pkgver"
+              cd -
+
+              cd /home/fusion809/GitHub/mine/packaging/PKGBUILDs
+              push "Bumping gvim submodules to $pkgver"
+              cd -
+
+              cd /home/fusion809/OBS/home:fusion809/gvim-gtk2
+              /usr/bin/osc ci -m "Bumping to $pkgver"
+              cd -
+
+              cd /home/fusion809/OBS/home:fusion809/vim-debian
+              /usr/bin/osc ci -m "Bumping to $pkgver"
+              cd -
+
+              vimaup
+         fi
+    fi
+
+    if [[ $baseversion != $vim_baseversion ]] || [[ $patchversion != $vim_patchversion ]]; then
+         /usr/bin/osc ci -m "Bumping version to $pkgver"
+    fi
+}
+
+function vimupb {
+    # Determine latest Vim version by reading Vim releases page on GitHub
+    pkgver=$(/usr/bin/wget -q https://github.com/vim/vim/releases -O - | /bin/grep "tar\.gz" | /usr/bin/head -n 1 | /usr/bin/cut -d '/' -f 5 | /usr/bin/cut -d '"' -f 1 | /bin/sed 's/v//g' | /bin/sed 's/\.tar\.gz//g')
+
+    ############################################################
+    ##################### app-editors/vim ######################
+    ############################################################
+
+    # Move to app-editors/vim dir
+    pushd /home/fusion809/fusion809-overlay/app-editors/vim
+
+    # Determine latest ebuild for Vim's pkgver
+    lver_vim=$(/bin/ls | /bin/grep ebuild | /usr/bin/sort -u | /usr/bin/tail -n 2 | /usr/bin/head -n 1 | /usr/bin/cut -d '-' -f 2 | /bin/sed 's/\.ebuild//g')
+
+    # Check if latest ebuild ver and latest Vim ver match
+    if ! [[ $lver_vim == $pkgver ]]; then
+        # Bump the ebuild if they do not match
+        # Wildcard is required as otherwise -r1, -r2, -r3, etc. will be ignored as suffixes.
+        /bin/mv vim-$lver_vim*.ebuild vim-$pkgver.ebuild
+        # Up/bin/date manifests and merge package
+        /usr/bin/sudo ebuild vim-$pkgver.ebuild manifest merge
+    fi
+
+    # Pop out of app-editors/vim dir
+    popd
+
+    ############################################################
+    ################### app-editors/vim-core ###################
+    ############################################################
+    # Change into app-editors/vim-core dir
+    pushd /home/fusion809/fusion809-overlay/app-editors/vim-core
+
+    # Get version of the newest ebuild in app-editors/vim-core
+    lver_vimc=$(/bin/ls | /bin/grep ebuild | /usr/bin/sort -u | /usr/bin/tail -n 2 | /usr/bin/head -n 1 | /usr/bin/cut -d '-' -f 3 | /bin/sed 's/\.ebuild//g')
+
+    # Check if pkgver and lver_vimc match
+    if ! [[ $lver_vimc == $pkgver ]]; then
+        # bump the ebuild if it they do not match
+        /bin/mv vim-core-$lver_vimc*.ebuild vim-core-$pkgver.ebuild
+        # Up/bin/date manifests and merge package
+        /usr/bin/sudo ebuild vim-core-$pkgver.ebuild manifest merge
+    fi
+
+    # Pop back out
+    popd
+
+    ############################################################
+    ##################### app-editors/gvim #####################
+    ############################################################
+    # Change into app-editors/gvim
+    pushd /home/fusion809/fusion809-overlay/app-editors/gvim
+
+    # Determine version of latest ebuild
+    lver_gvim=$(/bin/ls | /bin/grep ebuild | /usr/bin/sort -u | /usr/bin/tail -n 2 | /usr/bin/head -n 1 | /usr/bin/cut -d '-' -f 2 | /bin/sed 's/\.ebuild//g')
+
+    # Check if version matches pkgver
+    if ! [[ $lver_gvim == $pkgver ]]; then
+        # Bump ebuild to pkgver if they do not match
+        /bin/mv gvim-$lver_gvim*.ebuild gvim-$pkgver.ebuild
+        # Up/bin/date manifests and merge package
+        /usr/bin/sudo ebuild gvim-$pkgver.ebuild manifest merge
+    fi
+
+    # Commit to repo
+    push "Bumping version to $pkgver"
+
+    # Pop out
+    popd
+}
+
+vimupb >> /tmp/vim 2>&1
+printf '\e[1;34m%-0s\e[m' "Running ovimup vim." >> /tmp/vim
+printf "\n" >> /tmp/vim
+ovimup vim >> /tmp/vim 2>&1
+printf '\e[1;34m%-0s\e[m' "Running ovimup vim-suse." >> /tmp/vim
+printf "\n" >> /tmp/vim
+ovimup "vim-suse" >> /tmp/vim 2>&1
+printf '\e[1;34m%-0s\e[m' "Running ovimup vim-redhat." >> /tmp/vim
+printf "\n" >> /tmp/vim 2>&1
+ovimup "vim-redhat" >> /tmp/vim
