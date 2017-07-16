@@ -1,2 +1,2 @@
 #!/bin/bash
-/bin/su - fusion809 -c "/usr/local/bin/vimupd"
+/bin/su - fusion809 -c "export DISPLAY=":0" && /usr/local/bin/vimupd"
