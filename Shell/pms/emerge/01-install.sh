@@ -25,9 +25,9 @@ function eminnna {
 }
 
 function emmr {
-    sudo emerge @module-rebuild
+    sudo emerge --keep-going @module-rebuild
 }
 
 function empr {
-    sudo emerge @preserved-rebuild
+    sudo emerge --keep-going @preserved-rebuild
 }
