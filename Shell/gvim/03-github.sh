@@ -20,3 +20,4 @@ function gvlu {
 
 function gvjs {
     gvd "$SCR/JScripts/$1"
+}
