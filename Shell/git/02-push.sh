@@ -4,7 +4,7 @@ function push {
     if `printf "$PWD" | grep 'AUR' > /dev/null 2>&1`; then
          mksrcinfo
     elif `printf "$PWD" | grep 'fusion809-overlay' > /dev/null 2>&1`; then
-         pushd $HOME/fusion809-overlay && sudo repoman manifest -q && popd
+         pushd $PKG/fusion809-overlay && sudo repoman manifest -q && popd
     fi
 
     git add --all                                        # Add all files to git
