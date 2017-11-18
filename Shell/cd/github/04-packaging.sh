@@ -13,3 +13,7 @@ function cdgam {
 function cdst {
     cdpk "sabayon-tools/$1"
 }
+
+function cdfo {
+    cdpk "fusion809-overlay/$1"
+}

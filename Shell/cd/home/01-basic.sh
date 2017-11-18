@@ -6,10 +6,6 @@ function cddo {
     cd "$HOME/Downloads/$1"
 }
 
-function cdfo {
-    cd "$HOME/fusion809-overlay/$1"
-}
-
 function cdm {
     cd "$HOME/Music/$1"
 }
