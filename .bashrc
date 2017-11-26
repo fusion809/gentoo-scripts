@@ -20,5 +20,3 @@ for i in $HOME/Shell/*.sh
 do
     . "$i"
 done
-
-export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \n\$\[\033[00m\] "
