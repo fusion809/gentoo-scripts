@@ -63,6 +63,9 @@ alias gits=gitsw
 # Remember, for this to work you need your SSH keys setup
 # https://help.github.com/articles/generating-ssh-keys/
 function start_agent {
+    if ! `which keychain > /dev/null 2>&1`; then
+         emin keychain
+    fi
     eval `keychain -q --eval id_rsa`
 }
 
