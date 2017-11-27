@@ -4,3 +4,4 @@ function emrm {
 
 alias depclean=emrm
 alias emcav=emrm
+alias emremrm
