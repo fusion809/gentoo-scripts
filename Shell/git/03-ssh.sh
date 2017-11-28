@@ -48,11 +48,7 @@ alias gits=gitsw
 #############################################################
 # Sign in with SSH at startup
 # Makes contributing to GitHub projects a lot simpler.
-if [[ -a $HOME/.ssh/environment ]]
-then
-  SSH_ENV=$HOME/.ssh/environment
-elif [[ $USER == fusion809 ]]
-then
+if ! [[ -f $HOME/.ssh/id_rsa.pub ]]; then
   ssh-keygen -t rsa -b 4096 -C "brentonhorne77@gmail.com"
   SSH_ENV=$HOME/.ssh/environment
   git config --global user.name "fusion809"

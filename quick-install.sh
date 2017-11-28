@@ -56,6 +56,10 @@ if ! [[ -d $HOME/.oh-my-zsh/plugins/zsh-history-substring-search ]]; then
   git clone https://github.com/zsh-users/zsh-history-substring-search $HOME/.oh-my-zsh/plugins/zsh-history-substring-search
 fi
 
+if ! [[ -f /usr/bin/keychain ]]; then
+    sudo emerge net-misc/keychain
+fi
+
 # Change default login shell to Zsh
 chsh -s /bin/zsh
 sudo chsh -s /bin/zsh
