@@ -2,9 +2,12 @@ function emaw {
     sudo emerge --autounmask-write "$@"
 }
 
+# Reinstall all packages
 function emeav {
     sudo emerge -eav "$@"
 }
+
+alias emra=emeav
 
 function eminn {
     sudo emerge -av --noreplace "$@"
