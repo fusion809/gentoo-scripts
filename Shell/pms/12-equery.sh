@@ -7,6 +7,12 @@ function pacdesc {
     cat $atom | grep "DESCRIPTION" | cut -d '"' -f 2
 }
 
+alias pkgdesc=pacdesc
+
 function pactl {
     equery l "*" | cut -d ' ' -f 6 > $HOME/Documents/"Text files"/gentoo-package-list.txt
 }
+
+alias pactexlist=pactl
+alias paclt=pactl
+alias write_package_list_to_file=pactl
