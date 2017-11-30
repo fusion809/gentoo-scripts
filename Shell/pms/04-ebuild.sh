@@ -187,12 +187,3 @@ function bravup {
          printf "Either the latest version hasn't had Brave.tar.bz2 tagged to it or the latest version is already in the $FO repo.\n"
     fi
 }
-
-function pacdesc {
-    ver=$(equery m bzip2 | grep "Keywords" | sed 's/Keywords:\s*//g' | cut -d ':' -f 1)
-    loc=$(equery m bzip2 | grep "Location" | sed 's/Location:\s*//g')
-    simat=$(echo $loc | cut -d '/' -f 5)
-
-    atom="${loc}"/${simat}-$ver.ebuild
-    cat $atom | grep "DESCRIPTION" | cut -d '"' -f 2
-}
