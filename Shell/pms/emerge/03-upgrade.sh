@@ -3,7 +3,7 @@ function emcup {
 }
 
 function emup {
-    sudo emerge --verbose-conflicts --keep-going -uDU --with-bdeps=y @world
+    sudo emerge --autounmask-write --verbose-conflicts --keep-going -uDU --with-bdeps=y @world
 }
 
 function emaup {
