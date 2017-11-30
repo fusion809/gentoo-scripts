@@ -13,3 +13,7 @@ function cdle {
 function cdsp {
     cdcfe "Simple-Pendulum/$1"
 }
+
+function cdtx {
+    cddc "Text files"/$1
+}

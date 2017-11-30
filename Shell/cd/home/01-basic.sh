@@ -22,11 +22,9 @@ function cdsh {
     cd "$HOME/Shell/$1"
 }
 
-function cdtx {
+function cdt {
     cd "$HOME/Textbooks/$1"
 }
-
-alias cdt=cdtx
 
 function cdv {
     cd "$HOME/Videos/$1"

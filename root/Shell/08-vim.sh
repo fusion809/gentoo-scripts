@@ -18,10 +18,6 @@ function vpm {
 	vim /etc/portage/package.mask
 }
 
-function vpk {
-    vim /etc/portage/package.keywords
-}
-
 function vpu {
 	vim /etc/portage/package.use
 }
