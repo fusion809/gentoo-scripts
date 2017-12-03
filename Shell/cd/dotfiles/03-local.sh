@@ -25,3 +25,4 @@ function cdw {
 }
 
 alias cdlw=cdw
+alias cdlsw=cdw
