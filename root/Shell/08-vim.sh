@@ -39,3 +39,7 @@ function vvim {
 function vzsh {
 	vim $HOME/.zshrc
 }
+
+function vmo {
+    vim /etc/conf.d/modules
+}
