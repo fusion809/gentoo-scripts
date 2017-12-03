@@ -11,7 +11,6 @@ function groot {
         sudo mount --make-rslave /gentoo/sys
         sudo rm /gentoo/etc/resolv.conf
         sudo cp /etc/resolv.conf /gentoo/etc
-        sudo chroot /gentoo /usr/local/bin/md
     fi
 
     sudo chroot /gentoo /usr/local/bin/su-fusion809
