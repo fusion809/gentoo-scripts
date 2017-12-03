@@ -1,6 +1,8 @@
 function aroot {
-    if [[ -f /arch/proc/consoles ]]; then
+    if ! [[ -f /arch/proc/consoles ]]; then
          sudo arch-chroot /arch /usr/local/bin/su-fusion809
+    else
+         sudo chroot /arch /usr/local/bin/su-fusion809
     fi
 }
 
