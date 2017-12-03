@@ -27,3 +27,7 @@ function vs {
 }
 
 alias vsd=vs
+
+function vmo {
+    sudo vim /etc/conf.d/modules
+}
