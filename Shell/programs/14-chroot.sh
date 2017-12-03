@@ -1,9 +1,11 @@
 function aroot {
-    sudo arch-chroot /mnt/arch /usr/local/bin/su-fusion809
+    if [[ -f /arch/proc/consoles ]]; then
+         sudo arch-chroot /arch /usr/local/bin/su-fusion809
+    fi
 }
 
 function groot {
-    if ! [[ -f /gentoo/proc/config.gz ]]; then
+    if ! [[ -f /gentoo/proc/consoles ]]; then
         sudo mount -t proc /proc /gentoo/proc
         sudo mount --rbind /dev /gentoo/dev
         sudo mount --make-rslave /gentoo/dev
@@ -14,4 +16,12 @@ function groot {
     fi
 
     sudo chroot /gentoo /usr/local/bin/su-fusion809
+}
+
+function vroot {
+    if ! [[ -f /void/proc/consoles ]]; then
+         sudo arch-chroot /void /usr/local/bin/su-fusion809
+    else
+         sudo chroot /void /usr/local/bin/su-fusion809
+    fi
 }
