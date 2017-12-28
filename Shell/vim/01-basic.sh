@@ -1,7 +1,11 @@
 function vd {
-    pushd "$1"
-    vim
-    popd
+    if ! [[ $PWD == "$1" ]]; then
+         pushd "$1"
+         vim
+         popd
+    else
+         vim
+    fi
 }
 
 function svd {

@@ -1,7 +1,11 @@
 function gvd {
-    pushd "$1"
-    gvim
-    popd
+    if ! [[ $PWD == "$1" ]]; then
+         pushd "$1"
+         gvim
+         popd
+    else
+         gvim
+    fi
 }
 
 function sgvd {

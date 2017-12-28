@@ -11,6 +11,9 @@ function push {
     git commit -m "$1"                                   # Commit with message = argument 1
     git push origin $(git-branch)                        # Push to the current branch
 
+    if [[ $PWD = "$HOME/Shell" ]]; then
+         szsh
+    fi
 }
 
 function pusha {
