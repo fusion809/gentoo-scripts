@@ -11,7 +11,9 @@ function push {
     git commit -m "$1"                                   # Commit with message = argument 1
     git push origin $(git-branch)                        # Push to the current branch
 
-    if [[ $PWD = "$HOME/Shell" ]]; then
+    if `echo $PWD | grep "$HOME/Shell" &> /dev/null`; then
+         szsh
+    elif `echo $PWD | grep "$SCR/gentoo-scripts" &> /dev/null`; then
          szsh
     fi
 }
