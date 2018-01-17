@@ -7,7 +7,7 @@ function genroot {
          root="$1"
     fi
 
-    if ! [[ -f "$root/proc/config.gz" ]]; then
+    if ! [[ -f "$root/proc/cgroups" ]]; then
          sudo mount -t proc /proc "$root/proc"
          sudo mount --rbind /dev "$root/dev"
          sudo mount --make-rslave "$root/dev"
@@ -15,6 +15,9 @@ function genroot {
          sudo mount --make-rslave "$root/sys"
          sudo rm "$root/etc/resolv.conf"
          sudo cp -L /etc/resolv.conf "$root/etc"
+         if ! [[ -f "$root/data/.vim" ]]; then
+              sudo mount /dev/sdb1 "$root/data"
+         fi
     fi
 
     if [[ -f $root/bin/env ]]; then
