@@ -10,12 +10,12 @@ function sync {
     fi
 }
 
-function syncup {
-    sync && emerge -uDU --with-bdeps=y --backtrack=100 @world
+function emup {
+    emerge -uDU --with-bdeps=y --keep-going --backtrack=100 @world
 }
 
-function emup {
-    emerge -uDU --with-bdeps=y --backtrack=100 @world
+function syncup {
+    sync && emup
 }
 
 function emuppv {
