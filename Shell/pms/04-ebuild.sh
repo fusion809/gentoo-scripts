@@ -148,7 +148,7 @@ function vimupb {
     fi
 
     # Commit to repo
-    push "Bumping version to $pkgver"
+    pusha "Bumping version to $pkgver"
 
     # Pop out
     popd

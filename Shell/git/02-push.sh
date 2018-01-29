@@ -21,7 +21,7 @@ function push {
 function pusha {
 
     git add --all
-    git commit
+    git commit -m "$1"
     git push origin $(git-branch)
 
 }
