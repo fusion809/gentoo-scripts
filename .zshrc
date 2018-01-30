@@ -109,3 +109,9 @@ for i in $HOME/Shell/*.sh
 do
   . "$i"
 done
+
+if ` gcc-config -l | grep "*" | cut -d '-' -f 5 | cut -d ' ' -f 1 | grep "^4" > /dev/null 2>&1`; then
+    echo "You've got GCC set to 4.9.4, which should only be used for Pale Moon!"
+#else
+#    echo "Good, GCC is set up properly"
+fi
