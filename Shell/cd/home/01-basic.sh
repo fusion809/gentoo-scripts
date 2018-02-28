@@ -6,6 +6,10 @@ function cddo {
     cd "$HOME/Downloads/$1"
 }
 
+function cdlog {
+    cd "$HOME/log/$1"
+}
+
 function cdm {
     cd "$HOME/Music/$1"
 }
