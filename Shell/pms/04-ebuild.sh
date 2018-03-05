@@ -104,7 +104,7 @@ function vimupb {
         # Wildcard is required as otherwise -r1, -r2, -r3, etc. will be ignored as suffixes.
         mv vim-$lver_vim*.ebuild vim-$pkgver.ebuild
         # Update manifests and merge package
-        sudo ebuild vim-$pkgver.ebuild manifest merge
+        sudo ebuild vim-$pkgver.ebuild manifest
     fi
 
     # Pop out of app-editors/vim dir
@@ -124,7 +124,7 @@ function vimupb {
         # bump the ebuild if it they do not match
         mv vim-core-$lver_vimc*.ebuild vim-core-$pkgver.ebuild
         # Update manifests and merge package
-        sudo ebuild vim-core-$pkgver.ebuild manifest merge
+        sudo ebuild vim-core-$pkgver.ebuild manifest
     fi
 
     # Pop back out
@@ -144,7 +144,7 @@ function vimupb {
         # Bump ebuild to pkgver if they do not match
         mv gvim-$lver_gvim*.ebuild gvim-$pkgver.ebuild
         # Update manifests and merge package
-        sudo ebuild gvim-$pkgver.ebuild manifest merge
+        sudo ebuild gvim-$pkgver.ebuild manifest
     fi
 
     # Commit to repo
