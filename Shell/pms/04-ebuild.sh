@@ -74,8 +74,6 @@ function ovimup {
               cd $HOME/OBS/home:fusion809/vim-debian
               osc ci -m "Bumping to $pkgver"
               cd -
-
-              vimaup
          fi
     fi
 
