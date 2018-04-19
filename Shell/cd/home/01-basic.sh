@@ -50,3 +50,7 @@ function cdvt {
 function cdvi {
     cdvt "ISOs/$1"
 }
+
+function cdvil {
+    cdvi "Linux/$1"
+}
