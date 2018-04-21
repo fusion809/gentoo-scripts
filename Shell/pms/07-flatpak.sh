@@ -3,7 +3,9 @@ function builder {
 }
 
 function flatup {
-    flatpak update --user
+    if [[ -f /usr/bin/flatpak ]]; then
+         /usr/bin/flatpak update --user
+    fi
 }
 
 function monod {
