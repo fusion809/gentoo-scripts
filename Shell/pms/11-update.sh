@@ -1,3 +1,3 @@
 function update {
-    syncup && emrm && apmup && flatup
+    syncup && emrm && apmup && flatup && nixup
 }
