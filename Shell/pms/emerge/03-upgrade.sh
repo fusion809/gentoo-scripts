@@ -3,7 +3,7 @@ function emcup {
 }
 
 function emup {
-    sudo emerge --exclude=games-rpg/runescape-launcher-2.2.4-r2 --autounmask-write --verbose-conflicts --keep-going -uDU --with-bdeps=y @world
+    sudo emerge --autounmask-write --verbose-conflicts --keep-going -uDU --with-bdeps=y @world
 }
 
 function emaup {
