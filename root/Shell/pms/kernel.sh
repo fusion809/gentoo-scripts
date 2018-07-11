@@ -5,7 +5,7 @@ function kern-build {
     cd /usr/src/linux
 
     printf "Compiling the presently eselected kernel with 8 cores.\n"
-    make -j4
+    make -j9
 
     printf "Compiling the included kernel modules.\n"
     make modules_install
