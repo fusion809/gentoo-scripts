@@ -177,7 +177,7 @@ function vimupb {
     popd
 }
 
-# Update Vim in OBS, fusion809-overlay and GVim.AppImage repo to latest
+# Update Vim in OBS, fusion809-overlay and AUR
 function vimup {
     vimupb
 
