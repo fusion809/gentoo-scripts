@@ -64,45 +64,74 @@ function ovimup {
          sed -i -e 's|Release:       [0-9].*|Release:       1|g' vim.spec
 
          if [[ "$1" == "vim" ]]; then
-
+              # Bumping Arch gvim-gtk* PKGBUILDs to pkgver
+              printf '\e[1;34m%-0s\e[m' "sedding the gvim-gtk* packaging files to update to $pkgver"
+              printf "\n"
               sed -i -e "s|$vim_patchversion|$patchversion|g" {$HOME/OBS/home:fusion809/gvim-gtk2,$HOME/AUR/gvim-gtk2,$PK/PKGBUILDs/gvim-gtk2,$PK/PKGBUILDs/gvim-gtk3}/PKGBUILD
 
+              # Bumping vim-debian* packaging files
+              printf '\e[1;34m%-0s\e[m' "sedding the vim-debian* packaging files to update to $pkgver"
+              printf "\n"
               sed -i -e "s|$vim_baseversion.$vim_patchversion|$pkgver|g" $HOME/OBS/home:fusion809/vim-debian{,-gtk3}/{debian.dsc,_service}
-
               time=$(date +"%a, %d %b %Y %H:%M:%S")
               sed -i "1s/^/vim (2:$pkgver-1) trusty; urgency=medium\n\n  * New upstream release\n\n -- Brenton Horne <brentonhorne77@gmail.com>  $time +1000\n\n/" $HOME/OBS/home:fusion809/vim-debian{,-gtk3}/debian.changelog
 
+              # Comitting AUR bump
               cd $HOME/AUR/gvim-gtk2
+              printf '\e[1;34m%-0s\e[m' "Bumping AUR package gvim-gtk2 to $pkgver."
+              printf "\n"
               push "Bumping to $pkgver"
               cd -
 
+              # Comitting PKGBUILDs gvim-gtk2 package bump
               cd $PK/PKGBUILDs/gvim-gtk2
+              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk2 in PKGBUILDs repo to $pkgver."
+              printf "\n"
               push "Bumping to $pkgver"
               cd -
 
+              # Comitting PKGBUILDs gvim-gtk3 package bump
               cd $PK/PKGBUILDs/gvim-gtk3
+              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk3 in PKGBUILDs repo to $pkgver."
+              printf "\n"
               push "Bumping to $pkgver"
               cd -
 
+              # Comitting PKGBUILDs submodule bump
               cd $PK/PKGBUILDs
+              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk* submodules in the PKGBUILDs repo to $pkgver."
+              printf "\n"
               push "Bumping gvim submodules to $pkgver"
               cd -
 
+              # Comitting gvim-gtk2 OBS package bump
               cd $HOME/OBS/home:fusion809/gvim-gtk2
+              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk2 OBS package to $pkgver."
+              printf "\n"
               osc ci -m "Bumping to $pkgver"
               cd -
 
+              # Comitting vim-debian OBS package bump
               cd $HOME/OBS/home:fusion809/vim-debian
+              printf '\e[1;34m%-0s\e[m' "Bumping vim-debian to $pkgver."
+              printf "\n"
               osc ci -m "Bumping to $pkgver"
               cd -
 
+              # Comitting vim-debian-gtk3 OBS package bump
               cd $HOME/OBS/home:fusion809/vim-debian-gtk3
+              printf '\e[1;34m%-0s\e[m' "Bumping vim-debian-gtk3 to $pkgver."
+              printf "\n"
               osc ci -m "Bumping to $pkgver"
               cd -
          fi
     fi
 
     if [[ $baseversion != $vim_baseversion ]] || [[ $patchversion != $vim_patchversion ]]; then
+         if [[ "$1" == "vim" ]]; then
+              printf '\e[1;34m%-0s\e[m' "Bumping vim to $pkgver."
+              printf "\n"
+         fi
          osc ci -m "Bumping version to $pkgver"
     fi
 }
