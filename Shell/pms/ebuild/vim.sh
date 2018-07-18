@@ -32,12 +32,12 @@ function ovimup {
 
          if [[ "$1" == "vim" ]]; then
               # Bumping Arch gvim-gtk* PKGBUILDs to pkgver
-              printf '\e[1;34m%-0s\e[m' "sedding the gvim-gtk* packaging files to update to $pkgver"
+              printf '\e[1;34m%-0s\e[m' "sedding the gvim-gtk* packaging files to update to $pkgver."
               printf "\n"
               sed -i -e "s|$vim_patchversion|$patchversion|g" {$HOME/OBS/home:fusion809/gvim-gtk2,$HOME/AUR/gvim-gtk2,$PK/PKGBUILDs/gvim-gtk2,$PK/PKGBUILDs/gvim-gtk3}/PKGBUILD
 
               # Bumping vim-debian* packaging files
-              printf '\e[1;34m%-0s\e[m' "sedding the vim-debian* packaging files to update to $pkgver"
+              printf '\e[1;34m%-0s\e[m' "sedding the vim-debian* packaging files to update to $pkgver."
               printf "\n"
               sed -i -e "s|$vim_baseversion.$vim_patchversion|$pkgver|g" $HOME/OBS/home:fusion809/vim-debian{,-gtk3}/{debian.dsc,_service}
               time=$(date +"%a, %d %b %Y %H:%M:%S")
