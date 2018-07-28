@@ -184,20 +184,20 @@ function vimup {
     pkgpver=${vim_baseversion}.${vim_patchversion}
 
     if [[ $pkgver == $pkgpver ]]; then
-         printf "Vim is up-to-date!\n" && exit
+         printf "Vim is up-to-date!\n"
+    else
+         vimupb
+
+         printf '\e[1;34m%-0s\e[m' "Running ovimup vim."
+         printf "\n"
+         ovimup vim
+
+         printf '\e[1;34m%-0s\e[m' "Running ovimup vim-suse."
+         printf "\n"
+         ovimup "vim-suse"
+
+         printf '\e[1;34m%-0s\e[m' "Running ovimup vim-redhat."
+         printf "\n"
+         ovimup "vim-redhat"
     fi
-
-    vimupb
-
-    printf '\e[1;34m%-0s\e[m' "Running ovimup vim."
-    printf "\n"
-    ovimup vim
-
-    printf '\e[1;34m%-0s\e[m' "Running ovimup vim-suse."
-    printf "\n"
-    ovimup "vim-suse"
-
-    printf '\e[1;34m%-0s\e[m' "Running ovimup vim-redhat."
-    printf "\n"
-    ovimup "vim-redhat"
 }
