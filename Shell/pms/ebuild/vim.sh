@@ -5,6 +5,11 @@ function ovimup {
     patchversion=$(echo $pkgver | sed "s/$baseversion//g" | sed 's/\.//g')
     vim_baseversion=$(cat vim.spec | grep "%define.*baseversion" | sed 's/%define.*baseversion\s*//g' | head -n 1)
     vim_patchversion=$(cat vim.spec | grep "%define.*patchlevel" | sed 's/%define.*patchlevel\s*//g' | head -n 1)
+    pkgpver=${vim_baseversion}.${vim_patchversion}
+
+    if [[ $pkgver == $pkgpver ]]; then
+         printf "Vim is up-to-date!\n" && exit
+    fi
 
     if [[ $baseversion != $vim_baseversion ]]; then
 
