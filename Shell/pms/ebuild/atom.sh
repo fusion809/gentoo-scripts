@@ -1,7 +1,7 @@
 function atomup {
     cdfo app-editors/atom-bin
     pkgbver=$(curl -sL https://github.com/atom/atom/releases | grep amd64.tar.gz | grep "beta" | head -n 1 | cut -d '/' -f 6 | sed 's/v//g')
-    pkgsver=$(curl -sL https://github.com/atom/atom/releases | grep amd64.tar.gz | grep -v "beta" | head -n 2 | tail -n 1 | cut -d '/' -f 6 | sed 's/v//g')
+    pkgsver=$(curl -sL https://github.com/atom/atom/releases | grep amd64.tar.gz | grep -v "beta" | grep "v[0-9.]*" | head -n 1 | cut -d '/' -f 6 | sed 's/v//g')
     pkgbbver=${pkgbver/-*/}
     pkgbrel=${pkgbver/*-beta/}
     pkgpbver=$(ls | cut -d ' ' -f 1 | head -n 2 | tail -n 1 | cut -d '-' -f 3 | sed 's/.ebuild//g' | sed 's/_/-/g')
