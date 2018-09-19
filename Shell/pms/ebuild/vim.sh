@@ -15,7 +15,6 @@ function ovimup {
          if [[ "$1" == "vim" ]]; then
 
               sed -i -e "s|$vim_baseversion|$baseversion|g" $HOME/AUR/gvim-gtk2/PKGBUILD
-              sed -i -e "s|$vim_baseversion|$baseversion|g" $PK/PKGBUILDs/gvim-{gtk2,gtk3}/PKGBUILD
 
          fi
 
@@ -31,11 +30,6 @@ function ovimup {
          sed -i -e 's|Release:       [0-9].*|Release:       1|g' vim.spec
 
          if [[ "$1" == "vim" ]]; then
-              # Bumping Arch gvim-gtk* PKGBUILDs to pkgver
-              printf '\e[1;34m%-0s\e[m' "sedding the gvim-gtk* packaging files to update to $pkgver."
-              printf "\n"
-              sed -i -e "s|$vim_patchversion|$patchversion|g" {$HOME/OBS/home:fusion809/gvim-gtk2,$HOME/AUR/gvim-gtk2,$PK/PKGBUILDs/gvim-gtk2,$PK/PKGBUILDs/gvim-gtk3}/PKGBUILD
-
               # Bumping vim-debian* packaging files
               printf '\e[1;34m%-0s\e[m' "sedding the vim-debian* packaging files to update to $pkgver."
               printf "\n"
@@ -48,27 +42,6 @@ function ovimup {
               printf '\e[1;34m%-0s\e[m' "Bumping AUR package gvim-gtk2 to $pkgver."
               printf "\n"
               push "Bumping to $pkgver"
-              cd -
-
-              # Comitting PKGBUILDs gvim-gtk2 package bump
-              cd $PK/PKGBUILDs/gvim-gtk2
-              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk2 in PKGBUILDs repo to $pkgver."
-              printf "\n"
-              push "Bumping to $pkgver"
-              cd -
-
-              # Comitting PKGBUILDs gvim-gtk3 package bump
-              cd $PK/PKGBUILDs/gvim-gtk3
-              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk3 in PKGBUILDs repo to $pkgver."
-              printf "\n"
-              push "Bumping to $pkgver"
-              cd -
-
-              # Comitting PKGBUILDs submodule bump
-              cd $PK/PKGBUILDs
-              printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk* submodules in the PKGBUILDs repo to $pkgver."
-              printf "\n"
-              push "Bumping gvim submodules to $pkgver"
               cd -
 
               # Comitting gvim-gtk2 OBS package bump
