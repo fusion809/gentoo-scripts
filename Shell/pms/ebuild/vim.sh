@@ -9,14 +9,8 @@ function ovimup {
     if [[ $baseversion != $vim_baseversion ]]; then
 
          sed -i -e "s|baseversion $vim_baseversion|baseversion $baseversion|g" vim.spec
-         sed -i -e "s|$vim_baseversion|$baseversion|g" $HOME/OBS/home:fusion809/gvim-gtk2/PKGBUILD
+         sed -i -e "s|$vim_baseversion|$baseversion|g" $HOME/{AUR,OBS/home:fusion809}/gvim-gtk2/PKGBUILD
          sed -i -e 's|Release:       [0-9].*|Release:       1|g' vim.spec
-
-         if [[ "$1" == "vim" ]]; then
-
-              sed -i -e "s|$vim_baseversion|$baseversion|g" $HOME/AUR/gvim-gtk2/PKGBUILD
-
-         fi
 
     fi
 
