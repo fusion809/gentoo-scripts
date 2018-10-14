@@ -28,9 +28,7 @@ function ovimup {
 
 			# Comitting AUR bump
 			sed -i -e "s|$vim_patchversion|$patchversion|g" {$OBSH,$HOME/AUR}/gvim-gtk2/PKGBUILD
-			printf '\e[1;32m%-0s\e[m' "Trying to set up AUR key.\n"
-			eval ssh-agent /bin/zsh ; ssh-agent $HOME/.ssh/aur
-			eval keychain -q --eval $HOME/.ssh/aur
+			printf '\e[1;32m%-0s\e[m' "Trying to set up AUR key."
 			cd $HOME/AUR/gvim-gtk2
 			printf '\e[1;34m%-0s\e[m' "Bumping AUR package gvim-gtk2 to $pkgver."
 			printf "\n"
