@@ -19,7 +19,7 @@ export ZSH_DISABLE_COMPFIX=true
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
-ZSH_THEME="hornix"
+ZSH_THEME="hfulldate"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
