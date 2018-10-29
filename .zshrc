@@ -1,10 +1,8 @@
 #!/bin/zsh
-#
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export ZSD_DISABLE_COMPFIX="true"
-
+export ZSH_DISABLE_COMPFIX="true"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -12,39 +10,39 @@ export ZSD_DISABLE_COMPFIX="true"
 ZSH_THEME="hfulldate"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="false"
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=30
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
-DISABLE_LS_COLORS="false"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="false"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="false"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="mm/dd/yyyy"
+# HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -53,15 +51,12 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode safe-paste git zsh-syntax-highlighting zsh-completions github)
+plugins=(git github zsh-syntax-highlighting vi-mode
+#safe-paste zsh-completions
+)
 autoload -U compinit && compinit
-source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-export PATH=$PATH:/bin:/sbin:/usr/sbin
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
-
+source $HOME/.oh-my-zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -81,6 +76,9 @@ bindkey '^[[B' history-substring-search-down
 # bindkey -M vicmd 'j' history-substring-search-down
 # User configuration
 
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -95,7 +93,7 @@ bindkey '^[[B' history-substring-search-down
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -105,14 +103,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 for i in $HOME/Shell/*.sh
 do
   . "$i"
 done
-
-if ` gcc-config -l | grep "*" | cut -d '-' -f 5 | cut -d ' ' -f 1 | grep "^4" > /dev/null 2>&1`; then
-    echo "You've got GCC set to 4.9.4, which should only be used for Pale Moon!"
-#else
-#    echo "Good, GCC is set up properly"
-fi
