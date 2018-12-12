@@ -151,20 +151,22 @@ function vimup {
 	if [[ $pkgver == $pkgpver ]]; then
 		 printf "Vim is up-to-date!\n"
 	else
-		 vimupb
+		vimupb
 
-		 printf '\e[1;34m%-0s\e[m' "Running ovimup vim."
-		 printf "\n"
-		 ovimup vim
+		printf '\e[1;34m%-0s\e[m' "Running ovimup vim."
+		printf "\n"
+		ovimup vim
 
-		 printf '\e[1;34m%-0s\e[m' "Running ovimup vim-suse."
-		 printf "\n"
-		 ovimup "vim-suse"
+		printf '\e[1;34m%-0s\e[m' "Running ovimup vim-suse."
+		printf "\n"
+		ovimup "vim-suse"
 
-		 printf '\e[1;34m%-0s\e[m' "Running ovimup vim-redhat."
-		 printf "\n"
-		 ovimup "vim-redhat"
+		printf '\e[1;34m%-0s\e[m' "Running ovimup vim-redhat."
+		printf "\n"
+		ovimup "vim-redhat"
 
-		 printf '\e[1;34m%-0s\e[m' "Vim in the nixpkgs repo has been updated,\n although you will need to build it and update the checksums before commit.\n"
+		printf '\e[1;34m%-0s\e[m\n' "Vim in the nixpkgs repo has been updated,"
+		printf '\e[1;34m%-0s\e[m\n' "although you will need to build it and update"
+		printf '\e[1;34m%-0s\e[m\n' "the checksums before commit."
 	fi
 }
