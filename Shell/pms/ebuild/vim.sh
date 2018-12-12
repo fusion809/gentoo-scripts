@@ -9,7 +9,7 @@ function ovimup {
 	if [[ $baseversion != $vim_baseversion ]]; then
 
 		 sed -i -e "s|baseversion $vim_baseversion|baseversion $baseversion|g" vim.spec
-		 sed -i -e "s|version = \".*\";$|version = \"$pkgver\"|g" $NIXPKGS/pkgs/applications/editors/vim/common.nix
+		 sed -i -e "s|version = \".*\";$|version = \"$pkgver\";|g" $NIXPKGS/pkgs/applications/editors/vim/common.nix
 		 sed -i -e "s|$vim_baseversion|$baseversion|g" $HOME/{AUR,OBS/home:fusion809}/gvim-gtk2/PKGBUILD
 		 sed -i -e 's|Release:	 [0-9].*|Release:	 1|g' vim.spec
 
