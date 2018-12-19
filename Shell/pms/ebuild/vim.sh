@@ -166,6 +166,6 @@ function vimup {
 		printf "\n"
 		ovimup "vim-redhat"
 
-		printf '\e[1;34m%-0s\e[m\n' "Vim in the nixpkgs repo has been update, although you will need to build it and update the checksums before commit."
+		printf '\e[1;34m%-0s\e[m\n' "Vim in the nixpkgs repo has been updated, although you will need to build it and update the checksums (in its dir sedsha 9 hash should do it) before commit."
 	fi
 }
