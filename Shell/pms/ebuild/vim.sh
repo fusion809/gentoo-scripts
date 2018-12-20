@@ -64,7 +64,7 @@ function ovimup {
 			printf "\n"
 		 fi
 		 sed -i -e "s|version = \".*\";$|version = \"$pkgver\";|g" \
-				-e "8s|sha256 = \".*\"|sha256 = \"0r6wlnjyy8ng90s666s8fx1hnhmim93y1xllc3vywbn1aj2i5k99\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
+				-e "9s|sha256 = \".*\"|sha256 = \"0r6wlnjyy8ng90s666s8fx1hnhmim93y1xllc3vywbn1aj2i5k99\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
 		 osc ci -m "Bumping version to $pkgver"
 	fi
 }
