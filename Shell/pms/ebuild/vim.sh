@@ -63,8 +63,9 @@ function ovimup {
 			printf '\e[1;34m%-0s\e[m' "Bumping vim to $pkgver."
 			printf "\n"
 		 fi
-		 sed -i -e "s|version = \".*\";$|version = \"$pkgver\";|g" \
-				-e "9s|sha256 = \".*\"|sha256 = \"0r6wlnjyy8ng90s666s8fx1hnhmim93y1xllc3vywbn1aj2i5k99\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
+		 sha256="$(nix-prefetch-url https://github.com/vim/vim/archive/v${pkgver}.tar.gz | tail -n 1)"
+		 sed -i -e "s|version = \".*\";$|version = \"${pkgver}\";|g" \
+				-e "9s|sha256 = \".*\"|sha256 = \"${sha256}\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
 		 osc ci -m "Bumping version to $pkgver"
 	fi
 }
@@ -166,6 +167,8 @@ function vimup {
 		printf "\n"
 		ovimup "vim-redhat"
 
-		printf '\e[1;34m%-0s\e[m\n' "Vim in the nixpkgs repo has been updated, although you will need to build it and update the checksums (in its dir sedsha 9 hash should do it) before commit."
+		cdnp
+		push "vim: :arrow_up: $pkgver"
+		printf '\e[1;34m%-0s\e[m' "Vim in nixpkgs has been bumped."
 	fi
 }
