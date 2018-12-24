@@ -65,6 +65,7 @@ function ovimup {
 		 fi
 		 nix-prefetch-url https://github.com/vim/vim/archive/v${pkgver}.tar.gz &> /tmp/sha256
 		 sha256=$(cat /tmp/sha256 | tail -n 1)
+		 rm /tmp/sha256
 		 sed -i -e "s|version = \".*\";$|version = \"${pkgver}\";|g" \
 				-e "9s|sha256 = \".*\"|sha256 = \"${sha256}\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
 		 osc ci -m "Bumping version to $pkgver"
