@@ -9,7 +9,8 @@ function ovimup {
 	if [[ $baseversion != $vim_baseversion ]]; then
 
 		 sed -i -e "s|baseversion $vim_baseversion|baseversion $baseversion|g" vim.spec
-		 sed -i -e "s|$vim_baseversion|$baseversion|g" $HOME/{AUR,OBS/home:fusion809}/gvim-gtk2/PKGBUILD
+		 sed -i -e "11s|$vim_baseversion|$baseversion|" $OBSH/gvim-gtk2/PKGBUILD
+		 sed -i -e "5s|$vim_baseversion|$baseversion|" $HOME/AUR/gvim-gtk2/PKGBUILD
 		 sed -i -e 's|Release:	 [0-9].*|Release:	 1|g' vim.spec
 
 	fi
@@ -27,7 +28,8 @@ function ovimup {
 			sed -i "1s/^/vim (2:$pkgver-1) trusty; urgency=medium\n\n  * New upstream release\n\n -- Brenton Horne <brentonhorne77@gmail.com>  $time +1000\n\n/" $HOME/OBS/home:fusion809/vim-debian{,-gtk3}/debian.changelog
 
 			# Comitting AUR bump
-			sed -i -e "s|$vim_patchversion|$patchversion|g" {$OBSH,$HOME/AUR}/gvim-gtk2/PKGBUILD
+			sed -i -e "5s|$vim_patchversion|$patchversion|" $HOME/AUR/gvim-gtk2/PKGBUILD
+			sed -i -e "11s|$vim_patchversion|$patchversion|" $OBSH/gvim-gtk2/PKGBUILD
 			printf "\e[1;32m%-0s\e[m\n" "Trying to set up AUR key."
 			cd $HOME/AUR/gvim-gtk2
 			printf '\e[1;34m%-0s\e[m' "Bumping AUR package gvim-gtk2 to $pkgver."
