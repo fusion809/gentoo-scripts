@@ -1,12 +1,24 @@
 function ovimup {
 	cdobsh $1
-	pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+	printf "Determining pkgver...\n"
+	if command -v wget &> /dev/null ; then
+		pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+	elif command -v curl &> /dev/null ;
+		pkgver=$(curl -sL https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+	else
+		printf "Neither cURL nor wget was found, so cannot determine pkgver.\n" && return
+	fi
+	printf "pkgver is ${pkgver}.\n"
 	baseversion=$(echo $pkgver | sed 's/\.[0-9]*$//g')
-	patchversion=$(echo $pkgver | sed "s/$baseversion//g" | sed 's/\.//g')
+	printf "baseversion is ${baseversion}.\n"
+	patchversion=$(echo $pkgver | sed "s/^[0-9]*.[0-9]*//g" | sed 's/\.//g')
+	printf "patchversion is ${patchversion}.\n"
 	vim_baseversion=$(cat vim.spec | grep "%define.*baseversion" | sed 's/%define.*baseversion\s*//g' | head -n 1)
+	printf "vim_baseversion is ${vim_baseversion}.\n"
 	vim_patchversion=$(cat vim.spec | grep "%define.*patchlevel" | sed 's/%define.*patchlevel\s*//g' | head -n 1)
+	printf "vim_patchversion is ${vim_patchversion}.\n"
 
-	if [[ $baseversion != $vim_baseversion ]]; then
+	if [[ ${baseversion} != ${vim_baseversion} ]]; then
 
 		 sed -i -e "s|baseversion $vim_baseversion|baseversion $baseversion|g" vim.spec
 		 sed -i -e "11s|$vim_baseversion|$baseversion|" $OBSH/gvim-gtk2/PKGBUILD
@@ -15,7 +27,7 @@ function ovimup {
 
 	fi
 
-	if [[ $patchversion != $vim_patchversion ]]; then
+	if [[ ${patchversion} != ${vim_patchversion} ]]; then
 		 sed -i -e "s|patchlevel $vim_patchversion|patchlevel $patchversion|g" vim.spec
 		 sed -i -e 's|Release:	 [0-9].*|Release:	 1|g' vim.spec
 
@@ -60,16 +72,13 @@ function ovimup {
 		 fi
 	fi
 
-	if [[ $baseversion != $vim_baseversion ]] || [[ $patchversion != $vim_patchversion ]]; then
-		 if [[ "$1" == "vim" ]]; then
-			printf '\e[1;34m%-0s\e[m' "Bumping vim to $pkgver."
-			printf "\n"
-		 fi
-		 sed -i -e "s|version = \".*\";$|version = \"${pkgver}\";|g" $NIXPKGS/pkgs/applications/editors/vim/common.nix
-		 nix-prefetch-url $NIXPKGS --attr vim.src &> /tmp/sha256
-		 sha256=$(cat /tmp/sha256 | tail -n 1)
-		 sed -i -e "9s|sha256 = \".*\"|sha256 = \"${sha256}\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
-		 osc ci -m "Bumping version to $pkgver"
+	if ( [[ $baseversion != $vim_baseversion ]] || [[ $patchversion != $vim_patchversion ]] ) && [[ "${1}" == "vim" ]]; then
+		printf '\e[1;34m%-0s\e[m\n' "Bumping vim to ${pkgver}."
+		sed -i -e "s|version = \".*\";$|version = \"${pkgver}\";|g" $NIXPKGS/pkgs/applications/editors/vim/common.nix
+		nix-prefetch-url $NIXPKGS --attr vim.src &> /tmp/sha256
+		sha256=$(cat /tmp/sha256 | tail -n 1)
+		sed -i -e "9s|sha256 = \".*\"|sha256 = \"${sha256}\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
+		osc ci -m "Bumping version to ${pkgver}"
 	fi
 }
 
@@ -171,7 +180,7 @@ function vimup {
 		ovimup "vim-redhat"
 
 		cdnp
-		push "vim: :arrow_up: $pkgver"
+		ask
 		printf '\e[1;34m%-0s\e[m' "Vim in nixpkgs has been bumped."
 	fi
 }
