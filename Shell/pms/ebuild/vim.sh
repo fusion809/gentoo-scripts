@@ -3,7 +3,7 @@ function ovimup {
 	printf "Determining pkgver...\n"
 	if command -v wget &> /dev/null ; then
 		pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
-	elif command -v curl &> /dev/null ;
+	elif command -v curl &> /dev/null ; then
 		pkgver=$(curl -sL https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
 	else
 		printf "Neither cURL nor wget was found, so cannot determine pkgver.\n" && return
