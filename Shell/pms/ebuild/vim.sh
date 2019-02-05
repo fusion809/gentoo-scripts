@@ -23,7 +23,7 @@ function ovimup {
 	fi
 
 	sed -i -e "s|baseversion $vim_baseversion|baseversion $baseversion|g" \
-		   -e "s|patchversion $vim_patchversion|patchversion $patchversion|g" \
+		   -e "s|patchlevel $vim_patchversion|patchlevel $patchversion|g" \
 		   -e "s|Release:	 [0-9].*|Release:	 1|g" vim.spec
 
 
