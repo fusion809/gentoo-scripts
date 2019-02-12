@@ -178,7 +178,7 @@ function vimup {
 		ovimup "vim-redhat"
 
 		cdnp
-		ask
+		ask vim
 		printf '\e[1;34m%-0s\e[m' "Vim in nixpkgs has been bumped."
 	fi
 }
