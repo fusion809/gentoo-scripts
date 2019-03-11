@@ -107,3 +107,7 @@ for i in $HOME/Shell/*.sh
 do
   . "$i"
 done
+
+function list-packages {
+	equery size '*' | sed 's/\(.*\):.*(\([0-9]*\))$/\2 \1/' | grep "^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"
+}
