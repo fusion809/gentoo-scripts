@@ -178,7 +178,11 @@ function vimup {
 		ovimup "vim-redhat"
 
 		cdnp
-		ask vim "$pkgver"
+		if [[ $1 == "-y" ]]; then
+			push "vim: :arrow_up: ${pkgver}."
+		else
+			ask vim "$pkgver"
+		fi
 		printf '\e[1;34m%-0s\e[m' "Vim in nixpkgs has been bumped."
 	fi
 }
