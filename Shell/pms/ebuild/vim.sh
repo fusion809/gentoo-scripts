@@ -35,16 +35,6 @@ function ovimup {
 		time=$(date +"%a, %d %b %Y %H:%M:%S")
 		sed -i "1s/^/vim (2:$pkgver-1) trusty; urgency=medium\n\n  * New upstream release\n\n -- Brenton Horne <brentonhorne77@gmail.com>  $time +1000\n\n/" $OBSH/vim-debian{,-gtk3}/debian.changelog
 
-		# Arch
-		sed -i -e "s|^pkgver=.*|pkgver=$pkgver|" $AUR/gvim-gtk2/PKGBUILD $OBSH/gvim-gtk2/PKGBUILD
-
-		## AUR
-		cda gvim-gtk2
-		printf '\e[1;34m%-0s\e[m' "Bumping AUR package gvim-gtk2 to $pkgver."
-		printf "\n"
-		push "Bumping to $pkgver"
-		cd -
-
 		## Comitting gvim-gtk2 OBS package bump
 		cdobsh gvim-gtk2
 		printf '\e[1;34m%-0s\e[m' "Bumping gvim-gtk2 OBS package to $pkgver."
