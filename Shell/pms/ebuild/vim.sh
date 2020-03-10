@@ -63,10 +63,6 @@ function ovimup {
 		nix-prefetch-url $NIXPKGS --attr vim.src &> /tmp/sha256
 		sha256=$(cat /tmp/sha256 | tail -n 1)
 		sed -i -e "9s|sha256 = \".*\"|sha256 = \"${sha256}\"|" $NIXPKGS/pkgs/applications/editors/vim/common.nix
-
-		# Bumping vim OBS pkg
-		cdobsh vim
-		osc ci -m "Bumping version to ${pkgver}"
 	fi
 }
 
