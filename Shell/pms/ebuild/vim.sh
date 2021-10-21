@@ -2,9 +2,9 @@ function ovimup {
 	cdobsh $1
 	printf "Determining pkgver...\n"
 	if command -v wget &> /dev/null ; then
-		pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+		pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 7 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
 	elif command -v curl &> /dev/null ; then
-		pkgver=$(curl -sL https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+		pkgver=$(curl -sL https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 7 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
 	else
 		printf "Neither cURL nor wget was found, so cannot determine pkgver.\n" && return
 	fi
@@ -68,7 +68,7 @@ function ovimup {
 
 function vimupb {
 	# Determine latest Vim version by reading Vim releases page on GitHub
-	pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+	pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 7 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
 
 	############################################################
 	##################### app-editors/vim ######################
@@ -84,7 +84,7 @@ function vimupb {
 	if ! [[ $lver_vim == $pkgver ]]; then
 		# Bump the ebuild if they do not match
 		# Wildcard is required as otherwise -r1, -r2, -r3, etc. will be ignored as suffixes.
-		mv vim-$lver_vim*.ebuild vim-$pkgver.ebuild
+		mv vim-$lver_vim.ebuild vim-$pkgver.ebuild
 		# Update manifests and merge package
 		sudo ebuild vim-$pkgver.ebuild manifest
 	fi
@@ -104,7 +104,7 @@ function vimupb {
 	# Check if pkgver and lver_vimc match
 	if ! [[ $lver_vimc == $pkgver ]]; then
 		# bump the ebuild if it they do not match
-		mv vim-core-$lver_vimc*.ebuild vim-core-$pkgver.ebuild
+		mv vim-core-$lver_vimc.ebuild vim-core-$pkgver.ebuild
 		# Update manifests and merge package
 		sudo ebuild vim-core-$pkgver.ebuild manifest
 	fi
@@ -124,7 +124,7 @@ function vimupb {
 	# Check if version matches pkgver
 	if ! [[ $lver_gvim == $pkgver ]]; then
 		# Bump ebuild to pkgver if they do not match
-		mv gvim-$lver_gvim*.ebuild gvim-$pkgver.ebuild
+		mv gvim-$lver_gvim.ebuild gvim-$pkgver.ebuild
 		# Update manifests and merge package
 		sudo ebuild gvim-$pkgver.ebuild manifest
 	fi
@@ -139,7 +139,7 @@ function vimupb {
 # Update Vim in OBS, fusion809-overlay and AUR
 function vimup {
 	cdobsh vim
-	pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 5 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+	pkgver=$(wget -q https://github.com/vim/vim/releases -O - | grep "tar\.gz" | head -n 1 | cut -d '/' -f 7 | cut -d '"' -f 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
 	baseversion=$(echo $pkgver | sed 's/\.[0-9]*$//g')
 	patchversion=$(echo $pkgver | sed "s/$baseversion//g" | sed 's/\.//g')
 	vim_baseversion=$(cat vim.spec | grep "%define.*baseversion" | sed 's/%define.*baseversion\s*//g' | head -n 1)
